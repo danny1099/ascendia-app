@@ -1,0 +1,70 @@
+{
+  "validation": {
+    "required": "This field is required",
+    "invalid_email": "Please enter a valid email address",
+    "invalid_password": "Password must be at least 8 characters long",
+    "invalid_name": "Name  must be at least 3 characters long"
+  },
+  "messages": {
+    "loading": { "title": "Just a moment", "message": "We are organizing some things for you" },
+    "auth/invalid_session": "Your session has expired. Please sign in again to continue.",
+    "auth/email_exists": "Looks like you're already part of our community",
+    "auth/invalid_email": "This email format doesn't look quite right",
+    "auth/user_not_found": "We couldn't find your account",
+    "auth/invalid_credentials": "Your credentials details need another look",
+    "auth/create_account_failed": "Something went wrong while setting up your account. Let's give it another try.",
+    "auth/create_account_success": "Your leadership journey begins now. Your account is ready to go."
+  },
+
+  "lang": {
+    "en": {
+      "locale": "en",
+      "description": "Translate to english language (US)"
+    },
+    "es": {
+      "locale": "es",
+      "description": "Translate to spanish language (ES)"
+    }
+  },
+  "colors": {
+    "title": "Add your touch of color",
+    "description": "Let your decisions reflect your unique style."
+  },
+  "icons": {
+    "title": "Your personal touch",
+    "description": "Make your leadership and decisions shine with your own style."
+  },
+  "disclaimer": {
+    "description": "By continuing, you acknowledge that you understand and agree to the",
+    "terms-service": "Terms of Service",
+    "and": "and",
+    "privacy-policy": "Privacy Policy"
+  },
+
+  "marketing": {
+    "title": "Welcome to Ascendia",
+    "description": "Ascendia is a leadership simulator to help you grow your business."
+  },
+  "auth": {
+    "email": { "label": "Email", "placeholder": "Enter your email address" },
+    "password": { "label": "Password", "placeholder": "Enter your password" },
+    "submit-button": "Continue with Email",
+    "cancel-button": "Cancel"
+  },
+  "get_started": {
+    "title": "Plan it. Lead it.",
+    "description": "Create your Ascendia account and bring your leadership vision to life.",
+    "navigate": {
+      "text": "Already have an account?",
+      "link": "Sign in"
+    }
+  },
+  "sign_in": {
+    "title": "Decide it. Grow it.",
+    "description": "Sign in to Ascendia and keep building leadership that inspires others.",
+    "navigate": {
+      "text": "Don’t have an account yet?",
+      "link": "Sign up"
+    }
+  }
+}

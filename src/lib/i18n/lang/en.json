@@ -8,12 +8,9 @@
   "messages": {
     "loading": { "title": "Just a moment", "message": "We are organizing some things for you" },
     "auth/invalid_session": "Your session has expired. Please sign in again to continue.",
-    "auth/email_exists": "Looks like you're already part of our community",
-    "auth/invalid_email": "This email format doesn't look quite right",
     "auth/user_not_found": "We couldn't find your account",
-    "auth/invalid_credentials": "Your credentials details need another look",
-    "auth/create_account_failed": "Something went wrong while setting up your account. Let's give it another try.",
-    "auth/create_account_success": "Your leadership journey begins now. Your account is ready to go."
+    "auth/USER_ALREADY_EXISTS_USE_ANOTHER_EMAIL": "Looks like you're already part of our community",
+    "auth/INVALID_EMAIL_OR_PASSWORD": "Your credentials details need another look"
   },
 
   "lang": {

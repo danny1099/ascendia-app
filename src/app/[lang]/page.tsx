@@ -1,10 +1,8 @@
 import { getTranslations } from "next-intl/server";
 import { Navbar, Navlink, P, PatternUI, Title } from "@/shared/components";
-import { sleep } from "@/shared/utils";
 
 export default async function Home() {
   const t = await getTranslations("marketing");
-  await sleep(3000);
 
   return (
     <div className="flex h-dvh flex-col">

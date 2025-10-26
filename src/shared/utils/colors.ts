@@ -2,7 +2,7 @@ export const colors = {
   black: {
     text: "text-primary",
     bg: "bg-primary/80",
-    base: "text-white bg-primary/80 ring-primary",
+    base: "text-white bg-primary/90 ring-primary",
   },
   blue: {
     text: "text-blue-600",

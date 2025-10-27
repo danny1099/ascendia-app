@@ -24,7 +24,7 @@
   --action-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(357, 100%, 45%);
   --destructive-foreground: hsl(0, 0%, 98%);
-  --border: hsl(240, 6%, 94%);
+  --border: hsl(240, 6%, 90%);
   --border-muted: hsl(240, 6%, 94%);
   --input: hsl(240 5.9% 90%);
   --ring: hsl(0, 0%, 63%);

@@ -55,10 +55,10 @@ export const ctaVariants = cva(
       },
       bordered: {
         default: "border border-border",
-        primary: "border border-primary",
-        secondary: "border border-secondary",
-        destructive: "border border-destructive",
-        accent: "border border-accent",
+        primary: "border-2 border-primary",
+        secondary: "border-2 border-secondary",
+        destructive: "border-2 border-destructive",
+        accent: "border-2 border-accent",
       },
     },
     defaultVariants: {

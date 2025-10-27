@@ -1,4 +1,3 @@
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -8,16 +7,28 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum UserRole {
+  ADMIN
+  FACILITATOR
+  PARTICIPANT
+}
+
 model User {
-  id            String    @id
-  name          String  
-  email         String    @unique
-  emailVerified Boolean   @default(false)
-  image         String?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @default(now()) @updatedAt
-  sessions      Session[]
-  accounts      Account[]
+  id                   String    @id
+  name                 String?
+  email                String    @unique
+  emailVerified        Boolean   @default(false)
+  image                String?
+  role                 UserRole? @default(ADMIN)
+  stripeCustomerId     String?   @unique
+  stripeSubscriptionId String?   @unique
+  tenantId             String?
+  status               String?   @default("ACTIVE")
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @default(now()) @updatedAt
+
+  sessions Session[]
+  accounts Account[]
 
   @@map("users")
 }
@@ -51,7 +62,8 @@ model Account {
   createdAt             DateTime  @default(now())
   updatedAt             DateTime  @updatedAt
 
-  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   @@map("accounts")
 }
 
@@ -64,4 +76,43 @@ model Verification {
   updatedAt  DateTime @default(now()) @updatedAt
 
   @@map("verification")
+}
+
+// Tenants represent organizations or groups using the application
+enum PlanType {
+  FREE
+  STARTER
+  PROFESSIONAL
+  ENTERPRISE
+}
+
+model Tenant {
+  id            String          @id
+  name          String
+  slug          String          @unique
+  plan          PlanType        @default(FREE)
+  status        String          @default("ACTIVE")
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @default(now()) @updatedAt
+  Subscriptions Subscriptions[]
+
+  @@index([slug])
+  @@map("tenants")
+}
+
+model Subscriptions {
+  id           String    @id @default(cuid())
+  tenantId     String
+  plan         PlanType
+  startDate    DateTime  @default(now())
+  endDate      DateTime?
+  amount       Float
+  currency     String    @default("USD")
+  billingCycle String    @default("MONTHLY")
+  status       String    @default("ACTIVE")
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@map("subscriptions")
 }

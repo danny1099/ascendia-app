@@ -9,6 +9,7 @@
     "loading": { "title": "Just a moment", "message": "We are organizing some things for you" },
     "auth/invalid_session": "Your session has expired. Please sign in again to continue.",
     "auth/user_not_found": "We couldn't find your account",
+    "auth/success-signup": "Welcome aboard! Your account has been created successfully.",
     "auth/USER_ALREADY_EXISTS_USE_ANOTHER_EMAIL": "Looks like you're already part of our community",
     "auth/INVALID_EMAIL_OR_PASSWORD": "Your credentials details need another look"
   },
@@ -63,5 +64,9 @@
       "text": "Don’t have an account yet?",
       "link": "Sign up"
     }
+  },
+  "onboarding": {
+    "title": "Lead it. Live it.",
+    "description": "Your journey as a leader starts here. Lead with vision, live with purpose."
   }
 }

@@ -10,11 +10,15 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input, Button, InputPassword } from "@/shared/components";
 import { AuthWithOauth, FormNavigate } from "@/modules/auth/components";
 import { AuthSchema, authSchema } from "@/modules/auth/schema";
+import { getPrivateRoute } from "@/config/routes";
 
 export const FormSignIn = () => {
   const [isPending, startTransition] = useTransition();
+  const redirectTo = getPrivateRoute({ route: "Overview" });
   const router = useRouter();
   const toast = useToast();
+
+  /* i18n hooks translations and messages */
   const t = useTranslations("auth");
 
   const form = useForm<AuthSchema>({
@@ -36,8 +40,15 @@ export const FormSignIn = () => {
       });
 
       if (error || !data) {
-        console.log("error:", error);
         toast(`auth/${error.code}`, "error");
+        return;
+      }
+
+      /* handle success if user is signed in successfully */
+      const { user } = data;
+      if (user.id) {
+        /* TODO: Ajustar la redirección de acuerdo al rol y al tenant */
+        router.push(redirectTo.replace(":account", user.id));
       }
     });
   };

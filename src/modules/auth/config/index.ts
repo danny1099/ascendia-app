@@ -17,4 +17,12 @@ export const auth = betterAuth({
     },
   },
   plugins: [nextCookies()],
+
+  /* extend the default user model */
+  user: {
+    additionalFields: {
+      role: { type: "string", required: false },
+      tenantId: { type: "string", required: false },
+    },
+  },
 });

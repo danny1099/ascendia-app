@@ -4,13 +4,14 @@ import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { signUp } from "@/modules/auth/config/client";
+import { signIn } from "next-auth/react";
 import { getPrivateRoute } from "@/config/routes";
 import { useToast } from "@/shared/hooks";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/shared/components/form";
 import { Input, Button, InputPassword } from "@/shared/components";
 import { AuthWithOauth, FormNavigate } from "@/modules/auth/components";
 import { authSchema, AuthSchema } from "@/modules/auth/schema";
+import { trpc } from "@/trpc/client";
 
 export const FormRegister = () => {
   const [isPending, startTransition] = useTransition();
@@ -20,6 +21,7 @@ export const FormRegister = () => {
 
   /* i18n hooks translations and messages */
   const t = useTranslations("auth");
+  const api = trpc.auth.signUpWithEmail.useMutation();
 
   const form = useForm<AuthSchema>({
     resolver: zodResolver(authSchema),
@@ -34,21 +36,22 @@ export const FormRegister = () => {
 
   const onSubmit = async (values: AuthSchema) => {
     startTransition(async () => {
-      const { data, error } = await signUp.email({
-        email: values.email,
-        password: values.password,
-        name: "",
-      });
+      const { result, message, status } = await api.mutateAsync(values);
 
-      if (error) {
-        toast(`auth/${error.code}`, "error");
+      /* handle error if any occurs while signing up user */
+      if (status === "error") {
+        toast(message as string, "error");
         return;
       }
 
       /* handle success if user is created successfully sign in immediately */
-      if (data?.user.id) {
+      if (result?.id) {
         toast("auth/success-signup", "success");
-        router.push(redirectTo);
+        await signIn("credentials", {
+          email: values.email,
+          password: values.password,
+          redirect: false,
+        }).then(() => router.push(redirectTo, { scroll: false }));
       }
     });
   };

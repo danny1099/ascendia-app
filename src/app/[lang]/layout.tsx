@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { globalFont } from "@/config/fonts";
-import { I18nProvider, ThemeProvider, TrpcProvider } from "@/lib/providers";
+import { I18nProvider, ThemeProvider, TrpcProvider, SessionProvider } from "@/lib/providers";
 import { Toaster } from "@/shared/components";
 import "@/globals.css";
 
@@ -16,7 +16,9 @@ export default async function RootLayout({ children, params }: Readonly<RootLayo
       <body className={`${globalFont.className} antialiased`}>
         <I18nProvider>
           <ThemeProvider>
-            <TrpcProvider>{children}</TrpcProvider>
+            <SessionProvider>
+              <TrpcProvider>{children}</TrpcProvider>
+            </SessionProvider>
             <Toaster position="top-right" />
           </ThemeProvider>
         </I18nProvider>

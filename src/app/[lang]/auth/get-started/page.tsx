@@ -10,7 +10,7 @@ export default async function GetStarted() {
     <section className="relative flex size-full flex-col items-center py-5">
       <div className="flex h-fit flex-col px-4 md:w-1/3">
         <Title>{t("title")}</Title>
-        <P>{t("description")}</P>
+        <P className="-mt-1">{t("description")}</P>
       </div>
       <FormRegister />
     </section>

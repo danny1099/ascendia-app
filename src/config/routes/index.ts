@@ -6,8 +6,8 @@ export const publicRoutes = {
 
 export const privateRoutes = {
   Onboarding: "/private/onboarding",
-  Overview: "/private/t/:account/overview",
-  Workspaces: "/private/t/:account/ws",
+  Overview: "/private/t/:tenant/overview",
+  Workspaces: "/private/t/:tenant/ws",
 };
 
 export type PublicRoute = keyof typeof publicRoutes;
@@ -16,6 +16,6 @@ export type PrivateRoute = keyof typeof privateRoutes;
 export const getPublicRoute = (route: PublicRoute): string => publicRoutes[route];
 export const getPrivateRoute = ({ route, segment }: { route: PrivateRoute; segment?: string }): string => {
   const routePath = privateRoutes[route];
-  if (segment) return routePath.replace(":account", segment);
+  if (segment) return routePath.replace(":tenant", segment);
   return routePath;
 };

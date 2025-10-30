@@ -23,6 +23,7 @@ export const auth = betterAuth({
     additionalFields: {
       role: { type: "string", required: false },
       tenantId: { type: "string", required: false },
+      hasOnbording: { type: "boolean", required: false },
     },
   },
 });

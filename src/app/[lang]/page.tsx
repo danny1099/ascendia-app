@@ -1,10 +1,8 @@
 import { getTranslations } from "next-intl/server";
 import { Navbar, Navlink, P, Title } from "@/shared/components";
-import { getAuthSession } from "@/modules/auth/helpers";
 
 export default async function Home() {
   const t = await getTranslations("marketing");
-  const session = await getAuthSession();
 
   return (
     <div className="flex h-dvh flex-col">
@@ -21,8 +19,6 @@ export default async function Home() {
             Get Started for Free
           </Navlink>
         </section>
-
-        <pre>{JSON.stringify(session?.user, null, 2)}</pre>
       </main>
     </div>
   );

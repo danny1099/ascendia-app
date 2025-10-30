@@ -20,6 +20,7 @@ model User {
   emailVerified        Boolean   @default(false)
   image                String?
   role                 UserRole? @default(ADMIN)
+  hasOnboarding        Boolean   @default(false)
   stripeCustomerId     String?   @unique
   stripeSubscriptionId String?   @unique
   tenantId             String?

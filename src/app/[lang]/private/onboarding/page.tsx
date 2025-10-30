@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { P, Navbar, Title } from "@/shared/components";
 
 /* TODO: Crear flujo de onboarding para el usuario */
+/* TODO: Agregar validacion tenant con onboarding y redirigir al dashboard */
 
 export default async function Onboarding() {
   const t = await getTranslations("onboarding");

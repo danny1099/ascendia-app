@@ -4,17 +4,16 @@ import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { signIn } from "next-auth/react";
 import { getPrivateRoute } from "@/config/routes";
 import { useToast } from "@/shared/hooks";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/shared/components/form";
 import { Input, Button, InputPassword } from "@/shared/components";
 import { AuthWithOauth, FormNavigate } from "@/modules/auth/components";
 import { AuthSchema, authSchema } from "@/modules/auth/schema";
+import { signIn } from "@/modules/auth/config/client";
 
 export const FormSignIn = () => {
   const [isPending, startTransition] = useTransition();
-  const redirectTo = getPrivateRoute({ route: "Overview" });
   const router = useRouter();
   const toast = useToast();
 
@@ -34,23 +33,21 @@ export const FormSignIn = () => {
 
   const onSubmit = async (values: AuthSchema) => {
     startTransition(async () => {
-      await signIn("credentials", {
-        email: values?.email,
+      const { data, error } = await signIn.email({
+        email: values.email,
         password: values.password,
-        redirect: false,
-      })
-        .then((result) => {
-          if (result?.error) {
-            toast(result.error, "error");
-            return;
-          }
+      });
 
-          /* handle success if user is created successfully */
-          router.push(getPrivateRoute({ route: "Onboarding" }), { scroll: false });
-        })
-        .catch((error) => {
-          console.error("Error during sign in:", error);
-        });
+      if (error || !data) {
+        toast(`auth/${error.code}`, "error");
+        return;
+      }
+
+      /* handle success if user is signed in successfully */
+      const { user } = data;
+      if (user.id) {
+        router.push(getPrivateRoute({ route: "Onboarding" }), { scroll: false });
+      }
     });
   };
 

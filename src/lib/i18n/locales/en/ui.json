@@ -1,0 +1,48 @@
+{
+  "lang": {
+    "en": {
+      "locale": "en",
+      "description": "Translate to english language (US)"
+    },
+    "es": {
+      "locale": "es",
+      "description": "Translate to spanish language (ES)"
+    },
+    "tooltip": "Language"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "tooltip": "Theme"
+  },
+  "icons": {
+    "title": "Your personal touch",
+    "description": "Make your leadership and decisions shine with your own style."
+  },
+  "avatar": {
+    "title": "Make it yours",
+    "description": "Choose an avatar that reflects your style as you lead.",
+    "select_from_computer": "Or select from your computer",
+    "select_file": "Select an image file",
+    "no_file_selected": "No image selected"
+  },
+  "loading": {
+    "title": "Just a moment",
+    "description": "We are organizing some things for you"
+  },
+  "menu": {
+    "platform": "Platform",
+    "items": {
+      "overview": "Overview",
+      "organizations": "Organizations",
+      "users": "Users",
+      "workspaces": "Workspaces",
+      "dashboard": "Dashboard",
+      "scenarios": "Scenarios"
+    }
+  },
+  "marketing": {
+    "title": "Welcome to Ascendia",
+    "description": "Ascendia is a leadership simulator to help you grow your business."
+  }
+}

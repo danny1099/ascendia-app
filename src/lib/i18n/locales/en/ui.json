@@ -44,5 +44,35 @@
   "marketing": {
     "title": "Welcome to Ascendia",
     "description": "Ascendia is a leadership simulator to help you grow your business."
+  },
+  "get_started": {
+    "title": "Plan it. Lead it.",
+    "description": "Create your Ascendia account and bring your leadership vision to life.",
+    "navigate": {
+      "text": "Already have an account?",
+      "link": "Sign in"
+    },
+    "form": {
+      "email": { "label": "Email", "placeholder": "Enter your email address" },
+      "password": { "label": "Password", "placeholder": "Enter your password" },
+      "continue-button": "Continue with Email",
+      "cancel-button": "Cancel"
+    }
+  },
+  "sign_in": {
+    "title": "Decide it. Grow it.",
+    "description": "Sign in to Ascendia and keep building leadership that inspires others.",
+    "last_method": "Last used",
+    "navigate": {
+      "text": "Don’t have an account yet?",
+      "link": "Sign up"
+    },
+    "form": {
+      "email": { "label": "Email", "placeholder": "Enter your email address" },
+      "password": { "label": "Password", "placeholder": "Enter your password" },
+      "continue-button": "Continue with Email",
+      "cancel-button": "Cancel"
+    },
+    "forgot-password": "Forgot password?"
   }
 }

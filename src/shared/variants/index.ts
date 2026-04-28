@@ -124,18 +124,6 @@ export const sheetContainerVariants = cva(
   }
 );
 
-export const dividerVariants = cva("shrink-0 block", {
-  variants: {
-    type: {
-      vertical: "w-[1px] h-10 border-r border-border",
-      horizontal: "h-[1px] w-10 border-t border-border",
-    },
-  },
-  defaultVariants: {
-    type: "vertical",
-  },
-});
-
 export const tabsListVariants = cva(
   "group/tabs-list inline-flex w-fit items-center justify-center rounded-lg p-[3px] text-muted-foreground group-data-horizontal/tabs:h-8 group-data-vertical/tabs:h-fit group-data-vertical/tabs:flex-col data-[variant=line]:rounded-none",
   {
@@ -155,3 +143,15 @@ export const tabsListVariants = cva(
     },
   }
 );
+
+export const dividerVariants = cva("shrink-0 flex", {
+  variants: {
+    type: {
+      vertical: "w-[1px] h-10 border-r border-border",
+      horizontal: "h-[1px] w-10 border-t border-border",
+    },
+  },
+  defaultVariants: {
+    type: "vertical",
+  },
+});

@@ -102,6 +102,7 @@ export const iconName = {
   trophy: "trophy",
   unlock: "unlock",
   view: "view-list",
+  inbox: "inbox",
 };
 
 export const appIcons: IconName[] = [

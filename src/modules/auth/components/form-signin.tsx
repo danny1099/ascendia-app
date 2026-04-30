@@ -114,8 +114,8 @@ export const FormSignIn = () => {
                 {t("form.continue-button")}
                 {lastMethod === "email" && (
                   <Badge
-                    variant="outline"
-                    className="dark:bg-muted/15 bg-muted/5 text-accent text-3xs absolute right-2"
+                    variant="muted"
+                    className="text-3xs bg-muted/10 dark:bg-muted/40 dark:text-muted-foreground text-muted absolute right-2 border-none"
                   >
                     {t("last_method")}
                   </Badge>

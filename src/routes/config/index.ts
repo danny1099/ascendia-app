@@ -9,6 +9,7 @@ export const routes = {
           sign_in: "/sign-in",
           get_started: "/get-started",
           forgot_password: "/forgot-password",
+          verify_email: "/verify-email",
         },
       },
     },

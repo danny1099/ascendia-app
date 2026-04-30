@@ -45,6 +45,7 @@ export const badgeVariants = cva(
         outline: "border-border text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
         ghost: "[a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
         link: "text-primary underline-offset-4 [a&]:hover:underline",
+        muted: "bg-muted text-muted-foreground border border-border",
       },
     },
     defaultVariants: {
@@ -153,5 +154,38 @@ export const dividerVariants = cva("shrink-0 flex", {
   },
   defaultVariants: {
     type: "vertical",
+  },
+});
+
+export const boxVariants = cva("relative shrink-0 flex items-center justify-center", {
+  variants: {
+    variant: {
+      black: "text-white bg-black ring-black dark:bg-stone-950 dark:ring-stone-950",
+      gray: "text-gray-600 bg-gray-200 ring-gray-300 dark:bg-gray-800 dark:ring-gray-950",
+      blue: "text-blue-200 bg-blue-600 ring-blue-600 dark:bg-blue-900 dark:ring-blue-900",
+      green: "text-green-200 bg-green-600 ring-green-600 dark:bg-green-950 dark:ring-green-950",
+      red: "text-red-200 bg-red-600 ring-red-600 dark:bg-red-950 dark:ring-red-950",
+      purple: "text-purple-200 bg-purple-600 ring-purple-600 dark:bg-purple-950 dark:ring-purple-950",
+      yellow: "text-yellow-200 bg-yellow-500 ring-yellow-500 dark:bg-yellow-700 dark:ring-yellow-700",
+      fuchsia: "text-fuchsia-200 bg-fuchsia-600 ring-fuchsia-600 dark:bg-fuchsia-950 dark:ring-fuchsia-950",
+      ghost: "bg-transparent text-inherit ring-inherit dark:text-inherit dark:ring-inherit",
+      outline: "bg-transparent text-inherit border border-border",
+    },
+    type: {
+      rounded: "rounded-full",
+      square: "rounded-sm",
+      base: "rounded-none",
+    },
+    sizes: {
+      xs: "size-5 px-0.5",
+      sm: "size-6 px-1",
+      md: "size-7 px-1.5",
+      lg: "size-8 px-2",
+    },
+  },
+  defaultVariants: {
+    type: "square",
+    variant: "black",
+    sizes: "xs",
   },
 });

@@ -1,6 +1,7 @@
 export * from "./animated-content";
 export * from "./avatar";
 export * from "./badge";
+export * from "./box";
 export * from "./brand";
 export * from "./breadcrumb";
 export * from "./button-cancel";

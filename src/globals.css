@@ -44,10 +44,10 @@
   --muted-foreground: oklch(0.708 0 0);
   --accent: hsl(240, 8%, 6%);
   --accent-foreground: oklch(0.985 0 0);
-  --tertiary: oklch(0.42 0.18 266);
+  --tertiary: oklch(0.62 0.19 260);
   --tertiary-foreground: oklch(1 0 0);
-  --action: oklch(0.28 0.09 268);
-  --action-foreground: hsl(0, 0%, 100%);
+  --action: oklch(0.62 0.19 260 / 20%);
+  --action-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(1 0 0 / 2%);

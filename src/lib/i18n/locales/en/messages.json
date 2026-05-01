@@ -226,6 +226,46 @@
     "external_error": {
       "title": "Something went wrong",
       "content": "Hmm... something unexpected happened. Don’t worry, we’re on it."
+    },
+    "onboarding_error": {
+      "title": "Onboarding failed",
+      "content": "Something went wrong while completing your onboarding. Let’s try again."
+    },
+    "onboarding_completed": {
+      "title": "Onboarding completed",
+      "content": "Your onboarding is complete. Let’s keep going ✨"
+    },
+    "organization_already_exists": {
+      "title": "Organization already exists",
+      "content": "It looks like you already have an organization with this name."
+    },
+    "organization_error": {
+      "title": "Something went wrong",
+      "content": "Something went wrong while creating your organization. Let’s try again."
+    },
+    "organization_not_found": {
+      "title": "Organization not found",
+      "content": "We couldn’t find this organization. Looks like it doesn’t exist."
+    },
+    "organization_created": {
+      "title": "Organization created",
+      "content": "Your organization is all set up. now let's prepare your leaders"
+    },
+    "organization_updated": {
+      "title": "Organization updated",
+      "content": "Your organization has been updated. It’s looking good ✨"
+    },
+    "organization_has_members": {
+      "title": "Organization has members",
+      "content": "This organization has members. Please remove them first."
+    },
+    "organization_deleted": {
+      "title": "Organization deleted",
+      "content": "Your organization has been deleted. Let´s create another one 🚀"
+    },
+    "organization_member_without_role": {
+      "title": "Couldn't find role",
+      "content": "This organization member doesn't have a role. Please try again."
     }
   }
 }

@@ -1,6 +1,7 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import type { ColumnConfig, ColumnsConfig } from "@/shared/types";
+import { text } from "stream/consumers";
 
 export const cn = (...inputs: ClassValue[]) => {
   return twMerge(clsx(inputs));
@@ -134,4 +135,15 @@ export const shuffleArray = <T>(arr: T[]): T[] => {
     [result[i], result[j]] = [result[j], result[i]];
   }
   return result;
+};
+
+export const fallbackName = (text: string, separator = " ") => {
+  const names = text.split(separator);
+  const namesLength = names.length;
+
+  if (namesLength > 1) {
+    return `${names[0].charAt(0).toUpperCase()}${names[namesLength - 1].charAt(0).toUpperCase()}`;
+  }
+
+  return names[0].charAt(0).toUpperCase();
 };

@@ -11,7 +11,7 @@ export const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground",
         tertiary: "bg-tertiary text-tertiary-foreground",
         accent: "bg-accent text-accent-foreground",
-        ghost: "bg-transparent border-none text-foreground",
+        ghost: "bg-transparent border-none text-current",
         item: "bg-transparent border-none text-foreground hover:bg-accent hover:text-accent-foreground",
         link: "text-foreground text-xs font-medium",
         navlink:
@@ -23,7 +23,6 @@ export const buttonVariants = cva(
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-7 rounded-sm p-0.5",
         xs: "size-5 rounded-sm p-0.5",
-        tiny: "size-2.5 rounded-sm p-0.5",
       },
     },
     defaultVariants: {
@@ -34,7 +33,7 @@ export const buttonVariants = cva(
 );
 
 export const badgeVariants = cva(
-  "inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-full border border-transparent px-2 py-0.5 text-2xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3",
+  "inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-full border border-transparent px-2 py-0.5 text-3xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3",
   {
     variants: {
       variant: {
@@ -46,6 +45,10 @@ export const badgeVariants = cva(
         ghost: "[a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
         link: "text-primary underline-offset-4 [a&]:hover:underline",
         muted: "bg-muted text-muted-foreground border border-border",
+        tertiary: "bg-tertiary text-tertiary-foreground",
+        light: "bg-tertiary/15 text-tertiary border border-tertiary/20",
+        blue: "bg-blue-200 text-blue-600 ring-blue-600 dark:bg-blue-950 dark:ring-blue-950",
+        green: "bg-green-200 text-green-600 ring-green-600 dark:bg-green-950 dark:ring-green-950",
       },
     },
     defaultVariants: {
@@ -160,16 +163,13 @@ export const dividerVariants = cva("shrink-0 flex", {
 export const boxVariants = cva("relative shrink-0 flex items-center justify-center", {
   variants: {
     variant: {
-      black: "text-white bg-black ring-black dark:bg-stone-950 dark:ring-stone-950",
-      gray: "text-gray-600 bg-gray-200 ring-gray-300 dark:bg-gray-800 dark:ring-gray-950",
-      blue: "text-blue-200 bg-blue-600 ring-blue-600 dark:bg-blue-900 dark:ring-blue-900",
-      green: "text-green-200 bg-green-600 ring-green-600 dark:bg-green-950 dark:ring-green-950",
-      red: "text-red-200 bg-red-600 ring-red-600 dark:bg-red-950 dark:ring-red-950",
-      purple: "text-purple-200 bg-purple-600 ring-purple-600 dark:bg-purple-950 dark:ring-purple-950",
-      yellow: "text-yellow-200 bg-yellow-500 ring-yellow-500 dark:bg-yellow-700 dark:ring-yellow-700",
-      fuchsia: "text-fuchsia-200 bg-fuchsia-600 ring-fuchsia-600 dark:bg-fuchsia-950 dark:ring-fuchsia-950",
-      ghost: "bg-transparent text-inherit ring-inherit dark:text-inherit dark:ring-inherit",
-      outline: "bg-transparent text-inherit border border-border",
+      gray: "bg-gray-200 text-gray-600 ring-gray-600 dark:bg-gray-950 dark:ring-gray-950",
+      black: "text-white bg-black ring-black dark:bg-black/90 dark:ring-black/90",
+      blue: "bg-blue-200 text-blue-600 ring-blue-600 dark:bg-blue-950 dark:ring-blue-950",
+      green: "bg-green-200 text-green-600 ring-green-600 dark:bg-green-950 dark:ring-green-950",
+      red: "bg-red-200 text-red-600 ring-red-600 dark:bg-red-950 dark:ring-red-950",
+      purple: "bg-purple-200 text-purple-600 ring-purple-600 dark:bg-purple-950 dark:ring-purple-950",
+      outline: "bg-background text-inherit border border-border",
     },
     type: {
       rounded: "rounded-full",
@@ -177,15 +177,14 @@ export const boxVariants = cva("relative shrink-0 flex items-center justify-cent
       base: "rounded-none",
     },
     sizes: {
-      xs: "size-5 px-0.5",
-      sm: "size-6 px-1",
+      sm: "size-5 px-0.5",
       md: "size-7 px-1.5",
-      lg: "size-8 px-2",
+      lg: "size-9 px-2",
     },
   },
   defaultVariants: {
     type: "square",
     variant: "black",
-    sizes: "xs",
+    sizes: "sm",
   },
 });

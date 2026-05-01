@@ -1,4 +1,5 @@
 export * from "./animated-content";
+export * from "./avatar-picker";
 export * from "./avatar";
 export * from "./badge";
 export * from "./box";
@@ -18,7 +19,9 @@ export * from "./drawer";
 export * from "./dropdown";
 export * from "./empty-state";
 export * from "./form";
+export * from "./icon-picker";
 export * from "./icon";
+export * from "./image-device";
 export * from "./input-group";
 export * from "./input-password";
 export * from "./input";

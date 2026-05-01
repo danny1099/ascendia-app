@@ -3,19 +3,22 @@ import * as React from "react";
 import { Avatar as AvatarPrimitive } from "radix-ui";
 import { cn } from "@/shared/utils";
 
-export function Avatar({
-  className,
-  size = "default",
-  ...props
-}: React.ComponentProps<typeof AvatarPrimitive.Root> & {
-  size?: "default" | "sm" | "lg";
-}) {
+interface AvatarProps extends React.ComponentProps<typeof AvatarPrimitive.Root> {
+  size?: "default" | "sm" | "md" | "lg" | "xl";
+  url?: string;
+  ring?: boolean;
+  fallback?: string;
+  className?: string;
+}
+
+export function BaseAvatar({ className, ring = false, size = "default", ...props }: AvatarProps) {
   return (
     <AvatarPrimitive.Root
       data-slot="avatar"
       data-size={size}
+      data-ring={ring}
       className={cn(
-        "group/avatar relative flex size-8 shrink-0 overflow-hidden rounded-full select-none data-[size=lg]:size-10 data-[size=sm]:size-6",
+        "group/avatar data-[ring=true]:ring-offset-background relative flex size-8 shrink-0 overflow-hidden rounded-full select-none data-[ring=true]:ring-1 data-[ring=true]:ring-blue-600 data-[ring=true]:ring-offset-1 data-[size=default]:size-8 data-[size=lg]:size-12 data-[size=md]:size-10 data-[size=sm]:size-6 data-[size=xl]:size-16",
         className
       )}
       {...props}
@@ -25,7 +28,11 @@ export function Avatar({
 
 export function AvatarImage({ className, ...props }: React.ComponentProps<typeof AvatarPrimitive.Image>) {
   return (
-    <AvatarPrimitive.Image data-slot="avatar-image" className={cn("aspect-square size-full", className)} {...props} />
+    <AvatarPrimitive.Image
+      data-slot="avatar-image"
+      className={cn("aspect-square size-full object-cover", className)}
+      {...props}
+    />
   );
 }
 
@@ -81,5 +88,14 @@ export function AvatarGroupCount({ className, ...props }: React.ComponentProps<"
       )}
       {...props}
     />
+  );
+}
+
+export function Avatar({ url, fallback, className, ...props }: AvatarProps) {
+  return (
+    <BaseAvatar {...props}>
+      <AvatarImage src={url} alt="Avatar of logged in user" />
+      {fallback && <AvatarFallback>{fallback}</AvatarFallback>}
+    </BaseAvatar>
   );
 }

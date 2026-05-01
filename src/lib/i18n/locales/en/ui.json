@@ -17,13 +17,19 @@
   },
   "icons": {
     "title": "Your personal touch",
-    "description": "Make your leadership and decisions shine with your own style."
+    "description": "Your leadership and decisions shine with your own style."
   },
   "avatar": {
     "title": "Make it yours",
     "description": "Choose an avatar that reflects your style as you lead.",
     "select_from_computer": "Or select from your computer",
     "select_file": "Select an image file",
+    "no_file_selected": "No image selected"
+  },
+  "file_picker": {
+    "title": "Or select from your computer",
+    "description": "Choose an image file that reflects your style as you lead.",
+    "select_file": "Select an image from your device",
     "no_file_selected": "No image selected"
   },
   "loading": {
@@ -115,6 +121,81 @@
         "title": "Set your password",
         "subtitle": "Set and confirm your new password to continue"
       }
+    }
+  },
+  "onboarding": {
+    "title": "Lead it. Live it.",
+    "description": "Your journey as a leader starts here. Lead with vision, live with purpose.",
+    "steps": "Step {step} of {total}",
+    "search-input": "Type to search you profession here",
+    "no-results": "No professions found",
+    "form": {
+      "name": { "label": "Name", "placeholder": "What's your first name?" },
+      "lastName": { "label": "Last name", "placeholder": "And your last name?" },
+      "organization": { "label": "Organization", "placeholder": "What do you want to call your organization?" },
+      "profession": { "label": "Profession", "placeholder": "What best describes your role?" },
+      "continue": "Continue with the onboarding",
+      "submit-button": "Set up my account",
+      "previous": "Go back",
+      "role-disclaimer": "This helps us shape Ascendia around you — smarter experiences, smoother decisions, and the right tools at the right time ✨",
+      "org-disclaimer": "This helps us set up your organization’s space — clearer structure, smoother collaboration, and room to grow together ✨"
+    },
+    "profession": {
+      "technology": "Technology",
+      "business_and_management": "Business & Management",
+      "marketing_and_sales": "Marketing & Sales",
+      "finance_and_accounting": "Finance & Accounting",
+      "education_and_training": "Education & Training",
+      "others": "Others",
+      "software-engineer": "Software Engineer",
+      "product-manager": "Product Manager",
+      "ux-ui-designer": "UX/UI Designer",
+      "data-scientist": "Data Scientist",
+      "devops-engineer": "DevOps Engineer",
+      "technical-lead": "Technical Lead",
+      "solutions-architect": "Solutions Architect",
+      "it-manager": "IT Manager",
+      "cloud-architect": "Cloud Architect",
+      "ceo-founder": "CEO/Founder",
+      "coo-chief-operating-officer": "COO/Chief Operating Officer",
+      "cfo-chief-financial-officer": "CFO/Chief Financial Officer",
+      "cmo-chief-marketing-officer": "CMO/Chief Marketing Officer",
+      "cto-chief-technology-officer": "CTO/Chief Technology Officer",
+      "business-analyst": "Business Analyst",
+      "project-manager": "Project Manager",
+      "operations-manager": "Operations Manager",
+      "strategy-consultant": "Strategy Consultant",
+      "hr-manager": "HR Manager",
+      "hr-business-partner": "HR Business Partner",
+      "sales-manager": "Sales Manager",
+      "sales-director": "Sales Director",
+      "key-account-manager": "Key Account Manager",
+      "marketing-director": "Marketing Director",
+      "business-development-manager": "Business Development Manager",
+      "customer-success-manager": "Customer Success Manager",
+      "product-marketing-manager": "Product Marketing Manager",
+      "marketing-analyst": "Marketing Analyst",
+      "revenue-operations": "Revenue Operations",
+      "financial-analyst": "Financial Analyst",
+      "financial-controller": "Financial Controller",
+      "investment-manager": "Investment Manager",
+      "risk-manager": "Risk Manager",
+      "finance-director": "Finance Director",
+      "chief-financial-officer": "Chief Financial Officer",
+      "compliance-officer": "Compliance Officer",
+      "corporate-trainer": "Corporate Trainer",
+      "learning-and-development-manager": "Learning and Development Manager",
+      "l-and-d-specialist": "L&D Specialist",
+      "education-consultant": "Education Consultant",
+      "researcher": "Researcher",
+      "student-mba-executive": "Student (MBA/Executive)",
+      "freelancer-consultant": "Freelancer/Consultant",
+      "executive-coach": "Executive Coach",
+      "innovation-manager": "Innovation Manager",
+      "customer-experience-lead": "Customer Experience Lead",
+      "procurement-manager": "Procurement Manager",
+      "supply-chain-manager": "Supply Chain Manager",
+      "business-intelligence-analyst": "Business Intelligence Analyst"
     }
   }
 }

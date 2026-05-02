@@ -38,7 +38,7 @@ export const iconName = {
   collection: "collection",
   color: "droplet",
   conect: "ubuntu",
-  corporate: "buildings",
+  company: "buildings",
   database: "database",
   delete: "trash",
   device: "laptop",
@@ -108,10 +108,12 @@ export const iconName = {
   nut: "nut",
   area: "textarea-resize",
   personal: "person-workspace",
+  bezier: "bezier2",
+  building: "building-gear",
 };
 
 export const appIcons: IconName[] = [
-  "corporate",
+  "company",
   "screen",
   "collection",
   "diagram",

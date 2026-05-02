@@ -26,6 +26,9 @@ export const routes = {
             prefix: "/m",
             routes: {
               overview: "/overview",
+              organizations: "/organizations",
+              workspaces: "/workspaces",
+              users: "/users",
             },
           },
           hub: {

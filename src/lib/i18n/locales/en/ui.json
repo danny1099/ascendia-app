@@ -40,7 +40,7 @@
     "platform": "Platform",
     "items": {
       "overview": "Overview",
-      "organizations": "Organizations",
+      "organization": "Organizations",
       "users": "Users",
       "workspaces": "Workspaces",
       "dashboard": "Dashboard",
@@ -196,6 +196,60 @@
       "procurement-manager": "Procurement Manager",
       "supply-chain-manager": "Supply Chain Manager",
       "business-intelligence-analyst": "Business Intelligence Analyst"
+    }
+  },
+  "organization": {
+    "title": "Organizations",
+    "description": "Manage your shared spaces, align your team, and keep every decision moving forward.",
+    "search_box": "Type to search your organization here",
+    "no_results": {
+      "title": "No organizations found",
+      "subtitle": "You don't have any organizations yet. Let's create one!"
+    },
+    "add-button": "Add organization",
+    "form": {
+      "name": { "label": "Name", "placeholder": "What's your organization called?" },
+      "change-organization": {
+        "label": "Set this organization as active",
+        "placeholder": "This will be your organization active once being created."
+      },
+      "submit-button": "Save Organization",
+      "cancel-button": "Cancel"
+    },
+    "modal": {
+      "title": "Your organization",
+      "subtitle": "Manage your shared spaces, align your team, and keep every decision moving forward.",
+      "delete": {
+        "title": "Wait a moment",
+        "subtitle": "Are you sure you want to delete this organization?",
+        "description": "This action cannot be undone.",
+        "cancel-button": "No, I changed my mind",
+        "confirm-button": "Yes, I'm sure"
+      }
+    },
+    "switcher": {
+      "title": "Your organizations",
+      "current": "Active organization",
+      "invited": "Invited",
+      "invitations": "Invitations",
+      "role": "I'm a {role} | {count, plural, one {# member} other {+# members}}",
+      "members": "{count, plural, one {# member} other {+# members}}"
+    },
+    "table": {
+      "name": "Name",
+      "role": "Role",
+      "members": "Members",
+      "createdAt": "Created At",
+      "actions": "Actions",
+      "current": "Current",
+      "invited": "Invited"
+    },
+    "options": {
+      "edit": "Edit",
+      "delete": "Delete",
+      "cancel": "Cancel",
+      "as_default": "Make default",
+      "leave": "Leave"
     }
   }
 }

@@ -60,7 +60,7 @@ export function BreadcrumbSeparator({ children, className, ...props }: React.Com
       className={cn("[&>svg]:size-3.5", className)}
       {...props}
     >
-      {children ?? <Icon name="chevronRight" sizes="tiny" className="text-muted-foreground size-2.5 shrink-0" />}
+      {children ?? <Icon name="chevronRight" className="text-muted-foreground size-3 shrink-0" />}
     </li>
   );
 }

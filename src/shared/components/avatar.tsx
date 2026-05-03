@@ -4,7 +4,7 @@ import { Avatar as AvatarPrimitive } from "radix-ui";
 import { cn } from "@/shared/utils";
 
 interface AvatarProps extends React.ComponentProps<typeof AvatarPrimitive.Root> {
-  size?: "default" | "sm" | "md" | "lg" | "xl";
+  size?: "default" | "xs" | "sm" | "md" | "lg" | "xl";
   url?: string;
   ring?: boolean;
   fallback?: string;
@@ -18,7 +18,7 @@ export function BaseAvatar({ className, ring = false, size = "default", ...props
       data-size={size}
       data-ring={ring}
       className={cn(
-        "group/avatar data-[ring=true]:ring-offset-background relative flex size-8 shrink-0 overflow-hidden rounded-full select-none data-[ring=true]:ring-1 data-[ring=true]:ring-blue-600 data-[ring=true]:ring-offset-1 data-[size=default]:size-8 data-[size=lg]:size-12 data-[size=md]:size-10 data-[size=sm]:size-6 data-[size=xl]:size-16",
+        "group/avatar data-[ring=true]:ring-offset-background relative flex size-8 shrink-0 overflow-hidden rounded-full select-none data-[ring=true]:ring-1 data-[ring=true]:ring-blue-600 data-[ring=true]:ring-offset-2 data-[size=default]:size-8 data-[size=lg]:size-12 data-[size=md]:size-10 data-[size=sm]:size-7 data-[size=xl]:size-16 data-[size=xs]:size-6",
         className
       )}
       {...props}
@@ -70,7 +70,7 @@ export function AvatarGroup({ className, ...props }: React.ComponentProps<"div">
     <div
       data-slot="avatar-group"
       className={cn(
-        "group/avatar-group *:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2",
+        "group/avatar-group *:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:transition-transform *:data-[slot=avatar]:duration-200 *:data-[slot=avatar]:ease-in-out *:data-[slot=avatar]:hover:z-10 *:data-[slot=avatar]:hover:scale-110",
         className
       )}
       {...props}
@@ -83,7 +83,7 @@ export function AvatarGroupCount({ className, ...props }: React.ComponentProps<"
     <div
       data-slot="avatar-group-count"
       className={cn(
-        "bg-muted text-muted-foreground ring-background relative flex size-8 shrink-0 items-center justify-center rounded-full text-sm ring-2 group-has-data-[size=lg]/avatar-group:size-10 group-has-data-[size=sm]/avatar-group:size-6 [&>svg]:size-4 group-has-data-[size=lg]/avatar-group:[&>svg]:size-5 group-has-data-[size=sm]/avatar-group:[&>svg]:size-3",
+        "bg-muted text-muted-foreground ring-background text-2xs relative flex size-8 shrink-0 items-center justify-center rounded-full font-semibold ring-2 group-has-data-[size=lg]/avatar-group:size-10 group-has-data-[size=sm]/avatar-group:size-7 group-has-data-[size=xs]/avatar-group:size-6 [&>svg]:size-4 group-has-data-[size=lg]/avatar-group:[&>svg]:size-5 group-has-data-[size=sm]/avatar-group:[&>svg]:size-3",
         className
       )}
       {...props}

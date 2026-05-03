@@ -3,6 +3,7 @@ import { nextCookies } from "better-auth/next-js";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { emailOTP, lastLoginMethod, customSession, organization, admin } from "better-auth/plugins";
 import { sendEmailVerification, sendEmailResetPassword } from "@/modules/auth/emails";
+import { sendInvitationEmail } from "@/modules/user/emails";
 import { getActiveOrganization } from "@/modules/auth/helpers";
 import { env } from "@/config/env";
 import { prisma } from "@/lib/db";
@@ -64,14 +65,14 @@ export const auth = betterAuth({
     }),
     organization({
       sendInvitationEmail: async (data) => {
-        /*  const inviteLink = `${env.APP_HOST_URL}/invitations/${data.id}`;
+        const inviteLink = `${env.APP_HOST_URL}/invitations/${data.id}`;
         await sendInvitationEmail({
           email: data.email,
           inviterName: data.inviter.user.name,
           invitedEmail: data.inviter.user.email,
           teamName: data.organization.name,
           inviteLink,
-        }); */
+        });
       },
     }),
     admin(),

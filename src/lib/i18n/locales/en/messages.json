@@ -266,6 +266,26 @@
     "organization_member_without_role": {
       "title": "Couldn't find role",
       "content": "This organization member doesn't have a role. Please try again."
+    },
+    "user_already_invited": {
+      "title": "User already invited",
+      "content": "It looks like this user is already invited. Please wait for them to join."
+    },
+    "user_invitation_error": {
+      "title": "Something went wrong",
+      "content": "Something went wrong while inviting this user. Let’s try again."
+    },
+    "user_invited": {
+      "title": "User invited",
+      "content": "Your invitation has been sent. Let’s keep going ✨"
+    },
+    "invitation_accept_error": {
+      "title": "Something went wrong",
+      "content": "Something went wrong while accepting this invitation. Let’s try again."
+    },
+    "invitation_decline_error": {
+      "title": "Something went wrong",
+      "content": "Something went wrong while declining this invitation. Let’s try again."
     }
   }
 }

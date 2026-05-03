@@ -1,6 +1,6 @@
 "use client";
 import { ThemeToggle, LangToggle, Button, Divider } from "@/shared/components";
-import { MenuButton, Breadcrumb } from "@/modules/private/components";
+import { MenuButton, Breadcrumb, MenuUser } from "@/modules/private/components";
 
 export const Navbar = () => {
   return (
@@ -12,6 +12,7 @@ export const Navbar = () => {
         <Divider type="vertical" className="h-8" />
         <LangToggle />
         <ThemeToggle />
+        <MenuUser />
       </nav>
     </header>
   );

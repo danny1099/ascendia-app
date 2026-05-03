@@ -5,12 +5,13 @@ import { useTranslations } from "next-intl";
 import { useToast } from "@/shared/hooks";
 import { capitalize, cn } from "@/shared/utils";
 import { useAuth } from "@/modules/auth/hooks";
-import { MenuContent, MenuRadioGroup, MenuRadioItem, MenuSeparator, MenuItem } from "@/shared/components/dropdown";
+import { MenuContent, MenuRadioGroup, MenuRadioItem, MenuSeparator } from "@/shared/components/dropdown";
 import { MenuSub, MenuSubContent, MenuSubTrigger, MenuPortal } from "@/shared/components/dropdown";
 import { Icon, P, DropdownMenu, MenuTrigger, Badge } from "@/shared/components";
 import { OrganizationLogo } from "@/modules/organization/components";
 import { SwitcherSkeleton } from "@/modules/private/components";
 import { trpc } from "@/trpc/client";
+import { InvitationCard } from "@/modules/user/components";
 
 interface OrganizationSwitcherProps {
   className?: string;
@@ -102,13 +103,7 @@ export const MenuAccountSwitcher = ({ className }: OrganizationSwitcherProps) =>
         </MenuSub>
         
         <MenuSeparator />
-        <div className="flex flex-col justify-items-start rounded-sm px-3 py-2 gap-1 hover:bg-accent">
-          <p className="text-2xs font-medium">{t("invitations")}</p>
-          <span className="flex flex-row items-center gap-2">
-            <Icon name="invite" className="text-muted-foreground size-4" />
-            <P className="text-muted-foreground text-2xs">You have no pending invitations</P>
-          </span>
-        </div>
+        <InvitationCard />
       </MenuContent>
     </DropdownMenu>
   );

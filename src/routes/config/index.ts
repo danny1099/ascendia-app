@@ -19,6 +19,12 @@ export const routes = {
     prefix: "/",
     routes: {
       onboarding: "onboarding",
+      invitation: {
+        prefix: "invitations",
+        routes: {
+          invited: "/[invitation]",
+        },
+      },
       tenant: {
         prefix: "[organization]",
         routes: {

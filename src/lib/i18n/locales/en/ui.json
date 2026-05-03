@@ -251,5 +251,78 @@
       "as_default": "Make default",
       "leave": "Leave"
     }
+  },
+  "invitation": {
+    "invite-message": "<mark>name</mark> it invites you to join",
+    "join-to": "<strong>organization</strong> as a {role}",
+    "description": "This is your space to collaborate, showcase your leadership skills, and build something meaningful together. ✨",
+    "expiry": "This invitation expires in {time}",
+    "members": "{count, plural, one {# member} other {+# members}} have joined",
+    "accept": "Accept invitation",
+    "decline": "Decline"
+  },
+  "users": {
+    "title": "Users",
+    "description": "Manage users, define roles, assign permissions and keep your organization aligned and secure.",
+    "search_box": "Type to search your user here",
+    "no_results": {
+      "title": "No users found",
+      "subtitle": "You don't have any users yet. Let's create one!"
+    },
+    "add-button": "Add user",
+    "invite-button": "Invite user",
+    "verified": "Email verified",
+    "not-verified": "Email not verified",
+    "form": {
+      "email": { "label": "Email", "placeholder": "What's your user email?" },
+      "name": { "label": "Name", "placeholder": "What's your user name?" },
+      "lastName": { "label": "Last name", "placeholder": "What's your user last name?" },
+      "role": { "label": "Role", "placeholder": "What's your user role?" },
+      "submit-button": "Save User",
+      "cancel-button": "Cancel"
+    },
+    "invitation": {
+      "title": "Invite user",
+      "subtitle": "You can invite a new user to your organization and lead together.",
+      "invite-button": "Invite user",
+      "form": {
+        "invite": { "label": "Email", "placeholder": "What's is the user email to invite?" },
+        "submit-button": "Send Invitation",
+        "cancel-button": "Cancel"
+      }
+    },
+    "table": {
+      "invited": "Invited",
+      "name": "Name",
+      "email": "Email",
+      "role": "Role",
+      "status": "Status",
+      "createdAt": "Created At",
+      "actions": "Actions"
+    },
+    "modal": {
+      "title": "Users",
+      "subtitle": "Manage users, define roles, assign permissions and keep your team aligned and secure.",
+      "delete": {
+        "title": "Wait a moment",
+        "subtitle": "Are you sure you want to delete this user?",
+        "description": "This action cannot be undone.",
+        "cancel-button": "No, I changed my mind",
+        "confirm-button": "Yes, I'm sure"
+      }
+    },
+    "options": {
+      "manage": "Manage",
+      "edit": "Edit",
+      "delete": "Delete",
+      "cancel": "Cancel"
+    },
+    "invitations": {
+      "title": "Invitations",
+      "invite-message": "<mark>name</mark> it invites you to join <organization>organization</organization> as a {role}",
+      "expiry": "This invitation expires in {time}",
+      "no-invitations": "You don't have any invitations yet",
+      "respond": "View invitation"
+    }
   }
 }

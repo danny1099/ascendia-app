@@ -2,13 +2,15 @@
 import { useState } from "react";
 import { useDebounceCallback } from "usehooks-ts";
 import { useTranslations } from "next-intl";
-import { cn, Color } from "@/shared/utils";
-import { AnimatedContent, Icon, IconName, SearchBox, EmptyData } from "@/shared/components";
+import { cn } from "@/shared/utils";
+import { useTableSelection } from "@/shared/hooks";
+import { AnimatedContent, SearchBox, EmptyData, Checkbox } from "@/shared/components";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/shared/components/table";
 import { AddOrganizationButton, ButtonActions, OrganizationLogo } from "@/modules/organization/components";
 import { columnsNames } from "@/modules/organization/helpers";
 import { trpc } from "@/trpc/client";
 
+/* prettier-ignore */
 export const OrganizationList = () => {
   const [search, setSearch] = useState("");
   const setDebouncedSearch = useDebounceCallback(setSearch, 300);
@@ -17,6 +19,9 @@ export const OrganizationList = () => {
   const [organizations] = trpc.organization.getAll.useSuspenseQuery();
   const allOrganizations = organizations?.data || [];
   const filteredOrganizations = allOrganizations.filter((org) => org.name.toLowerCase().includes(search.toLowerCase()));
+
+  /* handle table selection functions for table */
+  const { isAllSelected, isSelected, toggleAll, toggleRow } = useTableSelection(filteredOrganizations);
 
   return (
     <article className="flex size-full flex-col">
@@ -32,6 +37,9 @@ export const OrganizationList = () => {
             <Table>
               <TableHeader>
                 <TableRow>
+                  <TableHead className="w-8">
+                    <Checkbox checked={isAllSelected} onCheckedChange={(checked) => toggleAll(checked === true)} />
+                  </TableHead>
                   {columnsNames.map(({ column, style }) => (
                     <TableHead key={column} className={cn("text-foreground", style)}>
                       {/* @ts-ignore */}
@@ -47,9 +55,14 @@ export const OrganizationList = () => {
                   .map((organization) => {
                     const { isActive, members, ...org } = organization;
                     return (
-                      <TableRow key={org.id} className="group hover:text-tertiary hover:bg-accent/60">
+                      <TableRow key={org.id} data-state={isSelected(org.id) && "selected"} className="group hover:text-tertiary hover:bg-accent/80">
+                        <TableCell>
+                          <Checkbox
+                            checked={isSelected(org.id)}
+                            onCheckedChange={(checked) => toggleRow(org.id, checked === true)}
+                          />
+                        </TableCell>
                         {columnsNames.map(({ column, format, style }) => {
-                          const [name, color] = org.logo?.split(":") || [];
                           return (
                             <TableCell key={column} className={cn("text-2xs text-foreground/75", style)}>
                               {column === "name" && (

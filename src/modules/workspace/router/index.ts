@@ -67,17 +67,16 @@ export const workspaceRouter = router({
 
     /* validate if slug already exists except current workspace */
     const slug = toSlug(name);
-    const workspaceSlugExisting = await ctx.db.workspace.findFirst({
-      where: { slug, id: { not: id } },
-    });
-
-    if (workspaceSlugExisting) {
-      return {
-        data: null,
-        status: "error",
-        message: "workspace_already_exists",
-        code: 400,
-      };
+    if (slug !== workspaceExisting.slug) {
+      const workspaceSlugExisting = await ctx.db.workspace.findFirst({ where: { slug, id: { not: id } } });
+      if (workspaceSlugExisting) {
+        return {
+          data: null,
+          status: "error",
+          message: "workspace_already_exists",
+          code: 400,
+        };
+      }
     }
 
     const { data, error } = await tryCatch(

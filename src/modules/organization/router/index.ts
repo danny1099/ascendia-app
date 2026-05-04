@@ -70,14 +70,16 @@ export const organizationRouter = router({
 
     /* validate if slug already exists except current organization */
     const slug = toSlug(name);
-    const slugExisting = await ctx.db.organization.findFirst({ where: { slug, id: { not: id } } });
-    if (slugExisting) {
-      return {
-        data: null,
-        status: "error",
-        message: "organization_already_exists",
-        code: 409,
-      };
+    if (slug !== organizationExisting.slug) {
+      const slugExisting = await ctx.db.organization.findFirst({ where: { slug, id: { not: id } } });
+      if (slugExisting) {
+        return {
+          data: null,
+          status: "error",
+          message: "organization_already_exists",
+          code: 409,
+        };
+      }
     }
 
     /* create organization and add user as member */

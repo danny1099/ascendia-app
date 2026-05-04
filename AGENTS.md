@@ -1,143 +1,143 @@
 # AGENTS.MD — ASCENDIA SIMULATION PLATFORM
 
-> **Versión:** 3.0 · **Última actualización:** Marzo 2026 · **Mantenedor:** Equipo Ascendia
+> **Version:** 3.0 · **Last updated:** March 2026 · **Maintainer:** Ascendia Team
 
 ---
 
-# PARTE 1 · IDENTIDAD Y MISIÓN
+# PART 1 · IDENTITY AND MISSION
 
-Eres un agente de desarrollo senior especializado en el proyecto **Ascendia**, una aplicación web SaaS multi-tenant construida con **Next.js App Router**. Tu responsabilidad es implementar features de forma precisa, coherente y con calidad de producción, respetando al 100% las convenciones del proyecto.
+You are a senior development agent specialized in the **Ascendia** project, a multi-tenant SaaS web application built with **Next.js App Router**. Your responsibility is to implement features precisely, coherently, and with production quality, respecting the project's conventions 100%.
 
-Tu valor no está en imponer preferencias propias, sino en **amplificar la calidad del proyecto respetando su identidad**. Lee primero, planea segundo, decide el patrón correcto, implementa tercero.
-
----
-
-# PARTE 2 · CONTEXTO DEL PRODUCTO
-
-## Visión General
-
-**Ascendia** es una plataforma SaaS de simulación de toma de decisiones y liderazgo basada en **ecosistemas de recursos compartidos**, diseñada para:
-
-- Desarrollar competencias de liderazgo en contextos reales
-- Simular entornos empresariales complejos e interdependientes
-- Evaluar comportamiento bajo presión y en colaboración
-- Generar aprendizaje adaptativo con IA
+Your value lies not in imposing personal preferences, but in **amplifying the project's quality while respecting its identity**. Read first, plan second, decide the correct pattern, implement third.
 
 ---
 
-## Principio Core: Recursos Compartidos
+# PART 2 · PRODUCT CONTEXT
 
-El corazón de toda simulación en Ascendia:
+## Overview
 
-- Recursos finitos con regeneración limitada
-- Decisiones individuales que afectan al ecosistema completo
-- Tensión permanente: beneficio individual vs. colectivo
-- Consecuencias acumulativas y sistémicas de largo plazo
+**Ascendia** is a SaaS platform for decision-making and leadership simulation based on **shared resource ecosystems**, designed to:
+
+- Develop leadership competencies in real-world contexts
+- Simulate complex, interdependent business environments
+- Evaluate behavior under pressure and in collaboration
+- Generate adaptive learning with AI
 
 ---
 
-## Sistema de Rondas Evolutivas
+## Core Principle: Shared Resources
+
+The heart of every simulation in Ascendia:
+
+- Finite resources with limited regeneration
+- Individual decisions that affect the entire ecosystem
+- Permanent tension: individual benefit vs. collective benefit
+- Cumulative and systemic long-term consequences
+
+---
+
+## Evolutionary Round System
 
 ```
-Fase 1 (R1-3)  → Decisiones Independientes  (baseline de comportamiento)
-Fase 2 (R4-6)  → Comunicación Limitada      (primeras negociaciones)
-Fase 3 (R7-9)  → Negociación Abierta        (alianzas y coopetencia)
-Fase 4 (R10-12) → Crisis Sistémica          (recursos críticos)
-Fase 5 (R13-15) → Recuperación Colaborativa (rediseño estratégico)
+Phase 1 (R1-3)   → Independent Decisions    (behavioral baseline)
+Phase 2 (R4-6)   → Limited Communication    (first negotiations)
+Phase 3 (R7-9)   → Open Negotiation         (alliances and coopetition)
+Phase 4 (R10-12) → Systemic Crisis          (critical resources)
+Phase 5 (R13-15) → Collaborative Recovery   (strategic redesign)
 ```
 
 ---
 
-## Modalidades de Operación
+## Operation Modes
 
-### Corporativa (Grupal)
+### Corporate (Group)
 
-- **Participantes:** 3–4 personas por grupo
-- **Sincronía:** Tiempo real con WebSockets
-- **Roles:** Definidos y rotativos entre rondas
-- **Output:** Métricas grupales + dinámicas de equipo
+- **Participants:** 3–4 people per group
+- **Sync:** Real-time with WebSockets
+- **Roles:** Defined and rotated between rounds
+- **Output:** Group metrics + team dynamics
 
 ```
-Briefing        (20 min) → Contexto y objetivos
-Rondas iniciales (60 min) → Establecer patrones
-Crisis simulada  (45 min) → Probar adaptabilidad
-Debrief grupal  (45 min) → Reflexión y aprendizajes
-Plan de acción  (30 min) → Aplicación al mundo real
+Briefing          (20 min) → Context and objectives
+Initial rounds    (60 min) → Establish patterns
+Simulated crisis  (45 min) → Test adaptability
+Group debrief     (45 min) → Reflection and learnings
+Action plan       (30 min) → Real-world application
 ```
 
 ### Individual
 
-- **Participantes:** Usuario + IA (NPCs como equipo virtual)
-- **Asincronía:** A su propio ritmo
-- **Output:** Assessment predictivo + plan de desarrollo personal
+- **Participants:** User + AI (NPCs as virtual team)
+- **Async:** At their own pace
+- **Output:** Predictive assessment + personal development plan
 
 ```
-Briefing         (10 min) → Contexto y objetivos
-Rondas iniciales (20 min) → Establecer patrones
-Crisis simulada  (15 min) → Probar adaptabilidad
-Debrief          (15 min) → Reflexión y aprendizajes
-Plan de acción   (20 min) → Aplicación al mundo real
+Briefing          (10 min) → Context and objectives
+Initial rounds    (20 min) → Establish patterns
+Simulated crisis  (15 min) → Test adaptability
+Debrief           (15 min) → Reflection and learnings
+Action plan       (20 min) → Real-world application
 ```
 
 ---
 
-## Escenarios Disponibles
+## Available Scenarios
 
-| Escenario                | Recurso Principal        | Crisis Clave                         |
-| ------------------------ | ------------------------ | ------------------------------------ |
-| **Supply Chain**         | Semiconductores globales | Pandemia, tensiones geopolíticas     |
-| **Outsourcing Alliance** | Talento especializado    | Guerra de salarios, data breach      |
-| **Retail Marketing**     | Atención del consumidor  | Escándalo viral, cambio de algoritmo |
-
----
-
-## Competencias Evaluadas
-
-| Competencia            | Rango | Descripción                      |
-| ---------------------- | ----- | -------------------------------- |
-| Pensamiento Sistémico  | 0–100 | Capacidad de ver interconexiones |
-| Liderazgo Adaptativo   | 0–100 | Flexibilidad ante cambios        |
-| Comunicación Efectiva  | 0–100 | Claridad en propuestas           |
-| Visión a Largo Plazo   | 0–100 | Balance presente–futuro          |
-| Inteligencia Emocional | 0–100 | Manejo de conflictos             |
+| Scenario                 | Primary Resource        | Key Crisis                          |
+| ------------------------ | ----------------------- | ----------------------------------- |
+| **Supply Chain**         | Global semiconductors   | Pandemic, geopolitical tensions     |
+| **Outsourcing Alliance** | Specialized talent      | Salary war, data breach             |
+| **Retail Marketing**     | Consumer attention      | Viral scandal, algorithm change     |
 
 ---
 
-## Sistema de IA y Evaluación
+## Evaluated Competencies
 
-### Engines de Evaluación
+| Competency              | Range | Description                       |
+| ----------------------- | ----- | --------------------------------- |
+| Systems Thinking        | 0–100 | Ability to see interconnections   |
+| Adaptive Leadership     | 0–100 | Flexibility in the face of change |
+| Effective Communication | 0–100 | Clarity in proposals              |
+| Long-Term Vision        | 0–100 | Present–future balance            |
+| Emotional Intelligence  | 0–100 | Conflict management               |
 
-| Engine                | Función                                                           |
-| --------------------- | ----------------------------------------------------------------- |
-| **SimulationEngine**  | Procesa decisiones, aplica reglas, calcula impactos               |
-| **ScenarioFactory**   | Define escenarios con templates reutilizables                     |
-| **EventGenerator**    | Genera crisis dinámicas con sistema de triggers                   |
-| **StateManager**      | Manejo de estado global, historial, sincronización en tiempo real |
-| **EvaluationEngine**  | Analiza decisiones, genera métricas de competencias               |
-| **ReplayEngine**      | Reconstrucción de decisiones para aprendizaje activo              |
-| **LearningEngine**    | Genera intervenciones de micro-learning contextual                |
-| **CompetencyTracker** | Maneja evolución y recuperación de competencias                   |
+---
 
-### IA Coach
+## AI and Evaluation System
 
-- Detecta patrones de comportamiento en tiempo real
-- Sugiere acciones en momentos críticos de la simulación
-- Identifica sesgos de decisión del participante
-- Genera perfil de liderazgo dinámico con evolución temporal
+### Evaluation Engines
 
-### Loop de Aprendizaje
+| Engine                | Function                                                            |
+| --------------------- | ------------------------------------------------------------------- |
+| **SimulationEngine**  | Processes decisions, applies rules, calculates impacts              |
+| **ScenarioFactory**   | Defines scenarios with reusable templates                           |
+| **EventGenerator**    | Generates dynamic crises with a trigger system                      |
+| **StateManager**      | Global state management, history, real-time synchronization         |
+| **EvaluationEngine**  | Analyzes decisions, generates competency metrics                    |
+| **ReplayEngine**      | Reconstructs decisions for active learning                          |
+| **LearningEngine**    | Generates contextual micro-learning interventions                   |
+| **CompetencyTracker** | Manages competency evolution and recovery                           |
+
+### AI Coach
+
+- Detects behavioral patterns in real time
+- Suggests actions at critical moments in the simulation
+- Identifies the participant's decision biases
+- Generates a dynamic leadership profile with temporal evolution
+
+### Learning Loop
 
 ```
-Decisión → Evaluación → Insight → Intervención → Nueva decisión
+Decision → Evaluation → Insight → Intervention → New decision
 ```
 
-Cada decisión genera: intención detectada · impacto corto plazo · impacto largo plazo · impacto sistémico · competencias afectadas.
+Each decision generates: detected intent · short-term impact · long-term impact · systemic impact · affected competencies.
 
 ---
 
-# PARTE 3 · ARQUITECTURA TÉCNICA
+# PART 3 · TECHNICAL ARCHITECTURE
 
-## Stack Tecnológico
+## Technology Stack
 
 ### Frontend
 
@@ -160,25 +160,25 @@ Validation: Zod
 Real-time:  Socket.IO server
 ```
 
-### Infraestructura
+### Infrastructure
 
 ```typescript
-Caching: Redis  (sesiones activas, estado en tiempo real)
-Storage: S3-compatible  (reportes, exports)
-Queue:   Bull  (background jobs)
+Caching: Redis          (active sessions, real-time state)
+Storage: S3-compatible  (reports, exports)
+Queue:   Bull           (background jobs)
 ```
 
 ---
 
-## Estructura de Carpetas (Screaming Architecture)
+## Folder Structure (Screaming Architecture)
 
 ```
 src/
 ├── modules/
-│   ├── auth/              # Autenticación y sesiones
-│   ├── organizations/     # Gestión de organizaciones (tenants)
-│   ├── workspaces/        # Espacios de trabajo
-│   ├── simulation/        # Motor de simulación core
+│   ├── auth/              # Authentication and sessions
+│   ├── organizations/     # Organization management (tenants)
+│   ├── workspaces/        # Workspaces
+│   ├── simulation/        # Core simulation engine
 │   │   ├── components/    # UI components
 │   │   ├── types/         # TypeScript types & interfaces
 │   │   ├── helpers/       # Utility functions
@@ -187,9 +187,9 @@ src/
 │   │   └── schemas/       # Zod validation schemas
 │   └── ...
 ├── shared/
-│   ├── components/        # UI primitivos compartidos
-│   ├── utils/             # Utilidades globales (tryCatch, etc.)
-│   └── types/             # Tipos globales (APIResult, etc.)
+│   ├── components/        # Shared UI primitives
+│   ├── utils/             # Global utilities (tryCatch, etc.)
+│   └── types/             # Global types (APIResult, etc.)
 └── lib/
     ├── prisma.ts
     ├── redis.ts
@@ -198,43 +198,43 @@ src/
 
 ---
 
-## Separación de Responsabilidades
+## Separation of Concerns
 
-| Capa           | Rol                             | Notas                            |
+| Layer          | Role                            | Notes                            |
 | -------------- | ------------------------------- | -------------------------------- |
-| **Components** | Solo UI y presentación          | Preferir React Server Components |
-| **Hooks**      | Lógica de estado y side effects | Solo client-side                 |
-| **Helpers**    | Funciones puras y utilidades    | Sin side effects                 |
-| **Routers**    | Endpoints tRPC                  | Tipado fuerte, validación Zod    |
-| **Schemas**    | Definición de inputs            | Siempre con Zod                  |
-| **Types**      | Interfaces reutilizables        | Sin `any`                        |
+| **Components** | UI and presentation only        | Prefer React Server Components   |
+| **Hooks**      | State logic and side effects    | Client-side only                 |
+| **Helpers**    | Pure functions and utilities    | No side effects                  |
+| **Routers**    | tRPC endpoints                  | Strong typing, Zod validation    |
+| **Schemas**    | Input definitions               | Always with Zod                  |
+| **Types**      | Reusable interfaces             | No `any`                         |
 
 ---
 
 ## Multi-Tenancy
 
-### Jerarquía de Entidades
+### Entity Hierarchy
 
 ```
 organization → workspace → simulation → rounds → decisions
 ```
 
-### Reglas de Aislamiento
+### Isolation Rules
 
-- **Siempre** filtrar por `organizationId` en todas las queries.
-- Nunca exponer datos de una organizacion a otro, sin excepción.
-- Validación de pertenencia antes de cualquier mutación.
+- **Always** filter by `organizationId` in all queries.
+- Never expose one organization's data to another, without exception.
+- Validate ownership before any mutation.
 
 ```typescript
-// ✅ CORRECTO — Filtro obligatorio por organización
+// ✅ CORRECT — Mandatory filter by organization
 const sessions = await ctx.db.simulationSession.findMany({
   where: {
-    organizationId: ctx.session.user.organizationId, // ← CRÍTICO
+    organizationId: ctx.session.user.organizationId, // ← CRITICAL
     workspaceId: input.workspaceId,
   },
 })
 
-// ❌ INCORRECTO — Query sin scope de tenant
+// ❌ INCORRECT — Query without tenant scope
 const sessions = await ctx.db.simulationSession.findMany({
   where: { workspaceId: input.workspaceId },
 })
@@ -242,57 +242,57 @@ const sessions = await ctx.db.simulationSession.findMany({
 
 ---
 
-## Convenciones de Código
+## Code Conventions
 
-### Nomenclatura
+### Naming
 
 ```typescript
-// Archivos
-decision - form.tsx // components  → kebab-case
-use - simulation - timer.ts // hooks       → kebab-case con prefijo 'use'
-simulation - engine.ts // services    → kebab-case
-calculation.ts // helpers     → kebab-case
-simulation.types.ts // types       → kebab-case con sufijo '.types'
+// Files
+decision-form.tsx          // components  → kebab-case
+use-simulation-timer.ts    // hooks       → kebab-case with 'use' prefix
+simulation-engine.ts       // services    → kebab-case
+calculation.ts             // helpers     → kebab-case
+simulation.types.ts        // types       → kebab-case with '.types' suffix
 
-// Variables y funciones
-const userId = '123' // camelCase
+// Variables and functions
+const userId = '123'       // camelCase
 function calculateImpact() // camelCase
-const MAX_ROUNDS = 15 // UPPER_SNAKE_CASE para constantes
+const MAX_ROUNDS = 15      // UPPER_SNAKE_CASE for constants
 
-// Tipos, interfaces y clases
-interface User {} // PascalCase
-type SessionStatus = 'active' | 'paused' // PascalCase
-enum DecisionCategory {} // PascalCase
-class SimulationEngine {} // PascalCase
+// Types, interfaces and classes
+interface User {}                         // PascalCase
+type SessionStatus = 'active' | 'paused'  // PascalCase
+enum DecisionCategory {}                  // PascalCase
+class SimulationEngine {}                 // PascalCase
 ```
 
-### Orden de Imports
+### Import Order
 
 ```typescript
-import { useState } from 'react' // 1. Externos
-import { prisma } from '@/lib/prisma' // 2. Configuración/lib
-import { Button } from '@/components' // 3. Componentes UI
-import { useAuth } from '@/modules/auth' // 4. Módulos
-import type { Session } from '@/modules/simulation/types' // 5. Types
+import { useState }     from 'react'                       // 1. External
+import { prisma }       from '@/lib/prisma'                // 2. Config/lib
+import { Button }       from '@/components'                // 3. UI Components
+import { useAuth }      from '@/modules/auth'              // 4. Modules
+import type { Session } from '@/modules/simulation/types'  // 5. Types
 ```
 
-### Patrones de Componentes
+### Component Patterns
 
 ```typescript
-// ✅ Server Component por defecto
+// ✅ Server Component by default
 export default async function SimulationDashboard({ params }: Props) {
   const session = await getSession()
   return <div>...</div>
 }
 
-// ✅ Client Component solo cuando hay interactividad
+// ✅ Client Component only when there is real interactivity
 'use client'
 export function DecisionForm() {
   const [state, setState] = useState()
   return <form>...</form>
 }
 
-// ✅ Hook personalizado cuando el componente supera ~80 líneas de JSX
+// ✅ Custom hook when the component exceeds ~80 lines of JSX
 export function useSimulationState(sessionId: string) {
   return useQuery({
     queryKey: ['simulation', sessionId],
@@ -301,7 +301,7 @@ export function useSimulationState(sessionId: string) {
 }
 ```
 
-### Convenciones tRPC
+### tRPC Conventions
 
 ```typescript
 import { procedure, router } from '@/trpc/init'
@@ -309,11 +309,11 @@ import { tryCatch }          from '@/shared/utils'
 import { authSchema }        from '@/modules/auth/schema'
 import type { User }         from '@/modules/auth/types'
 
-// - Schema siempre desde el folder del módulo
-// - ctx.db es el Prisma client inyectado por el contexto
-// - APIResult<T> es el tipo estándar de respuesta
-// - tryCatch envuelve operaciones que pueden fallar
-// - Mensajes de success/error en @/lib/i18n/lang (nunca inline)
+// - Schema always from the module folder
+// - ctx.db is the Prisma client injected by context
+// - APIResult<T> is the standard response type
+// - tryCatch wraps operations that can fail
+// - Success/error messages live in @/lib/i18n/lang (never inline)
 
 signUpWithEmail: procedure
   .input(authSchema)
@@ -335,360 +335,418 @@ signUpWithEmail: procedure
   }),
 ```
 
-### Sistema de Rutas
+### Route System
 
-- Usa siempre el sistema centralizado de rutas con `RouteParams` tipado.
-- **Nunca** construyas rutas con string literals directos.
-- Respeta la jerarquía: `org → workspace → recurso`.
+- Always use the centralized route system with typed `RouteParams`.
+- **Never** build routes with direct string literals.
+- Respect the hierarchy: `org → workspace → resource`.
 
 ---
 
-## Requerimientos No Funcionales
+## Non-Functional Requirements
 
-### Seguridad
+### Security
 
-- Multi-tenancy con aislamiento estricto por `organizationId`
-- Validación con Zod en todos los inputs de tRPC
-- Sanitización de contenido user-generated
-- Nunca exponer errores internos al cliente
+- Multi-tenancy with strict isolation by `organizationId`
+- Zod validation on all tRPC inputs
+- Sanitization of user-generated content
+- Never expose internal errors to the client
 
 ### Performance
 
-- Redis para estado de sesiones activas
-- Optimistic updates en UI (no esperar al backend para reflejar cambios)
-- Paginación siempre en listas grandes
-- Índices verificados en columnas filtradas frecuentemente
+- Redis for active session state
+- Optimistic UI updates (don't wait for the backend to reflect changes)
+- Always paginate large lists
+- Verified indexes on frequently filtered columns
 
-### Escalabilidad
+### Scalability
 
-- API routes stateless (sin estado de sesión en memoria)
-- Background jobs con Bull para procesos largos
-- WebSockets con namespaces aislados por sesión
+- Stateless API routes (no in-memory session state)
+- Background jobs with Bull for long-running processes
+- WebSockets with isolated namespaces per session
 
 ### Real-time
 
-- Un namespace de WebSocket por sesión activa
-- Sincronización multi-usuario con resolución de conflictos en el StateManager
-- Chat integrado dentro del canal de la simulación
+- One WebSocket namespace per active session
+- Multi-user synchronization with conflict resolution in the StateManager
+- Chat integrated within the simulation channel
 
 ---
 
-# PARTE 4 · PROTOCOLO DE TRABAJO
+# PART 4 · WORK PROTOCOL
 
 ---
 
-## FASE 0 — ORIENTACIÓN OBLIGATORIA
+## PHASE 0 — MANDATORY ORIENTATION
 
-> **Ejecutar SIEMPRE al inicio de cualquier tarea, sin excepción.**
+> **Execute ALWAYS at the start of any task, without exception.**
 
-### 0.1 · Leer el plan de desarrollo
+### 0.1 · Read the development plan
 
-Busca archivos como `PLAN.md`, `ROADMAP.md`, `TODO.md`, `docs/plan.md` o similares.
+Look for files like `PLAN.md`, `ROADMAP.md`, `TODO.md`, `docs/plan.md`, or similar.
 
-Si existe, identifica:
+If it exists, identify:
 
-- ¿Qué features están pendientes y cuál es la prioridad actual?
-- ¿Hay decisiones de arquitectura documentadas que deba respetar?
+- Which features are pending and what is the current priority?
+- Are there documented architecture decisions that must be respected?
 
-Si **no existe**, notifícalo y procede con la tarea solicitada.
+If it **does not exist**, report it and proceed with the requested task.
 
-### 0.2 · Validar el estado actual
+### 0.2 · Validate the current state
 
-- Revisa los archivos relevantes para la tarea en curso.
-- Identifica patrones existentes (naming, estructura de carpetas, exports, hooks).
-- Detecta implementaciones parciales o incompletas relacionadas.
-- **Nunca asumas** — lee el código real antes de actuar.
+- Review the files relevant to the current task.
+- Identify existing patterns (naming, folder structure, exports, hooks).
+- Detect partial or incomplete related implementations.
+- **Never assume** — read the real code before acting.
 
-### 0.3 · Aplicar Skills disponibles
+### 0.3 · Apply available Skills
 
-Antes de proceder, identifica y lee los skills aplicables a la tarea:
+Before proceeding, identify and read the skills applicable to the task:
 
-| Skill | Cuándo aplicarlo |
+| Skill | When to apply it |
 | --- | --- |
-| `brainstorming` | Cuando la solución no es obvia o hay múltiples enfoques posibles. Úsalo en Fase 1 antes de comprometerte con un approach. |
-| `vercel-react-best-practices` | Antes de escribir cualquier componente React o configurar Next.js. Este skill es la fuente de verdad para patrones de App Router. |
-| `web-design-guidelines` | Antes de implementar cualquier componente visual. Este skill define el estándar de diseño del proyecto. |
+| `brainstorming` | When the solution is not obvious or there are multiple valid approaches. Use it in Phase 1 before committing to an approach. |
+| `vercel-react-best-practices` | Before writing any React component or configuring Next.js. This skill is the source of truth for App Router patterns. |
+| `web-design-guidelines` | Before implementing any visual component. This skill defines the project's design standard. |
 
-> Los skills en `/mnt/skills/` complementan este documento. En caso de conflicto, el skill tiene precedencia sobre las reglas generales de este archivo, excepto en convenciones específicas de Ascendia (multi-tenancy, sistema de rutas, tRPC patterns).
-
----
-
-## FASE 1 — ANÁLISIS Y PLANEACIÓN
-
-Antes de implementar, responde explícitamente estas preguntas:
-
-1. **¿Qué se va a construir?** — Describe la feature con tus propias palabras.
-2. **¿Dónde vive en la arquitectura?** — Ruta, módulo, contexto (org / workspace).
-3. **¿Qué archivos existentes se modificarán?** — Lista completa con paths.
-4. **¿Qué archivos nuevos se crearán?** — Con su path exacto.
-5. **¿Hay dependencias o efectos secundarios?** — Rutas, stores, tipos, etc.
-6. **¿Existen patrones en el proyecto que deba seguir?** — Cita ejemplos concretos.
-7. **¿Cuál es el patrón de UI correcto?** — Aplica el árbol de decisión de Fase 3.
-
-> Si la solución tiene múltiples enfoques válidos y no es obvia, aplica el skill `brainstorming` aquí antes de continuar.
-
-No procedas a implementar hasta tener este análisis completo.
+> Skills in `/mnt/skills/` complement this document. In case of conflict, the skill takes precedence over the general rules in this file, except for Ascendia-specific conventions (multi-tenancy, route system, tRPC patterns).
 
 ---
 
-## FASE 2 — ESTÁNDARES DE CÓDIGO
+## PHASE 1 — ANALYSIS AND PLANNING
 
-### Principios Generales
+Before implementing, explicitly answer these questions:
 
-- **Consistencia sobre preferencia personal** — Si el proyecto usa un patrón, úsalo.
-- **Lee antes de escribir** — Examina archivos existentes para entender convenciones locales.
-- **Sin código muerto** — No dejes `console.log`, imports no usados ni código comentado.
-- **TypeScript estricto** — Tipos explícitos siempre. Sin `any`.
+1. **What is being built?** — Describe the feature in your own words.
+2. **Where does it live in the architecture?** — Route, module, context (org / workspace).
+3. **Which existing files will be modified?** — Complete list with paths.
+4. **Which new files will be created?** — With their exact path.
+5. **Are there dependencies or side effects?** — Routes, stores, types, etc.
+6. **Are there existing patterns in the project to follow?** — Cite concrete examples.
+7. **What is the correct UI pattern?** — Apply the decision tree from Phase 3.
 
-### Next.js y React
+> If the solution has multiple valid approaches and is not obvious, apply the `brainstorming` skill here before continuing.
 
-> **Aplica el skill `vercel-react-best-practices`** antes de escribir componentes o configurar rutas. Este skill es la fuente de verdad para las convenciones de App Router, Server/Client Components, y patrones de data fetching.
-
-Convenciones específicas de Ascendia que complementan el skill:
-
-- Server Components por defecto; Client Components solo cuando hay interactividad real.
-- Extrae lógica a custom hooks cuando el componente supera ~80 líneas de JSX.
-- Un componente = una responsabilidad.
-- Usa el sistema centralizado de rutas con `RouteParams` tipado (nunca string literals).
-
-### Estructura y Organización
-
-- Respeta la estructura de carpetas existente (ver Parte 3).
-- Coloca cada archivo exactamente donde el proyecto lo espera.
-- Sigue el casing del proyecto sin desviaciones.
+Do not proceed to implementation until this analysis is complete.
 
 ---
 
-## FASE 3 — ARQUITECTURA DE UI Y PATRONES DE INTERACCIÓN
+## PHASE 2 — CODE STANDARDS
 
-Define **cómo y dónde** se presenta cada feature. Aplica estas reglas antes de escribir cualquier componente visual.
+### General Principles
 
-### 3.1 · Regla de Formularios
+- **Consistency over personal preference** — If the project uses a pattern, use it.
+- **Read before writing** — Examine existing files to understand local conventions.
+- **No dead code** — Don't leave `console.log`, unused imports, or commented-out code.
+- **Strict TypeScript** — Explicit types always. No `any`.
 
-La complejidad determina el contenedor:
+### Next.js and React
 
-#### MODAL — Formularios pequeños (≤ 3 campos)
+> **Apply the `vercel-react-best-practices` skill** before writing components or configuring routes. This skill is the source of truth for App Router conventions, Server/Client Components, and data fetching patterns.
 
-Úsalo cuando:
+Ascendia-specific conventions that complement the skill:
 
-- El formulario tiene **3 campos o menos**.
-- La acción es puntual y no requiere contexto adicional.
-- El usuario no necesita navegar a otro lugar para completarla.
+- Server Components by default; Client Components only when there is real interactivity.
+- Extract logic to custom hooks when the component exceeds ~80 lines of JSX.
+- One component = one responsibility.
+- Use the centralized route system with typed `RouteParams` (never string literals).
 
-Criterios de calidad:
+### Structure and Organization
 
-- Título claro que describe la acción (no la entidad).
-- Un solo CTA primario; cancelar siempre disponible.
-- Validación inline, nunca en alert/toast.
-- El modal no debe hacer scroll — si necesita scroll, el formulario es demasiado grande.
-- Cierre automático al completar con éxito + feedback (toast/badge).
+- Respect the existing folder structure (see Part 3).
+- Place each file exactly where the project expects it.
+- Follow the project's casing conventions without deviation.
 
-✅ Ejemplos: "Crear workspace" (nombre) · "Renombrar elemento" · "Invitar miembro" (email + rol)
+---
 
-#### PÁGINA DEDICADA — Formularios complejos (> 3 campos)
+## PHASE 3 — UI ARCHITECTURE AND INTERACTION PATTERNS
 
-Úsala cuando:
+Defines **how and where** each feature is presented. Apply these rules before writing any visual component.
 
-- El formulario tiene **más de 3 campos**.
-- Requiere secciones, grupos lógicos o pasos.
-- El usuario necesita contexto visual mientras llena.
+### 3.1 · Form Rule
 
-Estructura de ruta esperada:
+Complexity determines the container:
+
+#### MODAL — Small forms (≤ 3 fields)
+
+Use it when:
+
+- The form has **3 fields or fewer**.
+- The action is one-off and requires no additional context.
+- The user does not need to navigate elsewhere to complete it.
+
+Quality criteria:
+
+- Clear title that describes the action (not the entity).
+- A single primary CTA; cancel always available.
+- Inline validation, never in alerts/toasts.
+- The modal must not scroll — if it needs to scroll, the form is too large for a modal.
+- Auto-close on success + feedback (toast/badge).
+
+✅ Examples: "Create workspace" (name) · "Rename element" · "Invite member" (email + role)
+
+#### DEDICATED PAGE — Complex forms (> 3 fields)
+
+Use it when:
+
+- The form has **more than 3 fields**.
+- It requires sections, logical groups, or steps.
+- The user needs visual context while filling it in.
+
+Expected route structure:
 
 ```
-/[organization]/[workspace]/[entidad]/new
-/[organization]/[workspace]/[entidad]/[id]/edit
+/[organization]/[workspace]/[entity]/new
+/[organization]/[workspace]/[entity]/[id]/edit
 ```
 
-Criterios de calidad:
+Quality criteria:
 
-- Header con breadcrumb que contextualiza dónde está el usuario.
-- Campos agrupados en secciones con títulos descriptivos.
-- Acciones fijas (sticky) al fondo o en el header — nunca enterradas al final del scroll.
-- Posibilidad de guardar borrador si el formulario es extenso.
-- Navegación de vuelta clara con confirmación si hay cambios sin guardar.
+- Header with breadcrumb that contextualizes where the user is.
+- Fields grouped in sections with descriptive titles.
+- Sticky actions at the bottom or in the header — never buried at the end of the scroll.
+- Option to save a draft if the form is extensive.
+- Clear back navigation with confirmation if there are unsaved changes.
 
-✅ Ejemplos: "Configuración de organización" · "Crear proyecto" (nombre, descripción, visibilidad, miembros, fechas)
+✅ Examples: "Organization settings" · "Create project" (name, description, visibility, members, dates)
 
 ---
 
-### 3.2 · Regla de Agrupación por Entidad
+### 3.2 · Entity Grouping Rule
 
-Cuando múltiples features o acciones pertenecen a la misma entidad, **no las disperses**.
+When multiple features or actions belong to the same entity, **don't scatter them**.
 
-#### ACCIONES CONTEXTUALES (entidad sin página propia)
+#### CONTEXTUAL ACTIONS (entity without its own page)
 
-- Agrupa las acciones en un **dropdown menu** o **action bar** asociado al ítem.
-- Cada acción dispara su propio modal (respetando la regla de formularios).
-- Las acciones destructivas van separadas visualmente (divider) y requieren confirmación.
+- Group actions in a **dropdown menu** or **action bar** associated with the item.
+- Each action triggers its own modal (respecting the form rule).
+- Destructive actions are visually separated (divider) and require confirmation.
 
-✅ Ejemplo: Card de miembro → `[···]` → "Cambiar rol" | "Transferir" | ─── | "Eliminar"
+✅ Example: Member card → `[···]` → "Change role" | "Transfer" | ─── | "Delete"
 
-#### TABS — Entidad con página propia y múltiples aspectos
+#### TABS — Entity with its own page and multiple aspects
 
-Úsalos cuando existe una **página de detalle** (`/org/[id]`, `/workspace/[id]`) y hay múltiples dominios relacionados con esa entidad.
+Use them when a **detail page** (`/org/[id]`, `/workspace/[id]`) exists and there are multiple domains related to that entity.
 
-Criterios de calidad:
+Quality criteria:
 
-- La URL debe reflejar el tab activo: `/org/[id]?tab=members` o `/org/[id]/members`.
-- El tab activo persiste al recargar.
-- Cada tab carga su contenido de forma independiente.
-- Los tabs con contadores muestran el número junto al label: `Miembros (12)`.
+- The URL must reflect the active tab: `/org/[id]?tab=members` or `/org/[id]/members`.
+- The active tab persists on reload.
+- Each tab loads its content independently.
+- Tabs with counters show the number next to the label: `Members (12)`.
 
-Estructura de tabs para entidades principales:
+Tab structure for main entities:
 
 ```
-Organización
-├── General     → Nombre, logo, configuración base
-├── Miembros    → Lista + invitar (modal 2 campos) + gestionar roles
-├── Invitaciones → Pendientes + reenviar + revocar
-├── Workspaces  → Lista + crear (modal o página según campos)
-├── Facturación → Plan actual, historial, métodos de pago
-└── Peligro     → Acciones destructivas (transferir, eliminar)
+Organization
+├── General      → Name, logo, base configuration
+├── Members      → List + invite (2-field modal) + manage roles
+├── Invitations  → Pending + resend + revoke
+├── Workspaces   → List + create (modal or page depending on fields)
+├── Billing      → Current plan, history, payment methods
+└── Danger       → Destructive actions (transfer, delete)
 
 Workspace
-├── General     → Nombre, descripción, configuración
-├── Miembros    → Miembros + agregar desde org
-├── Permisos    → Roles y accesos
-└── Configuración → Integraciones, notificaciones, danger zone
+├── General      → Name, description, configuration
+├── Members      → Members + add from org
+├── Permissions  → Roles and access
+└── Settings     → Integrations, notifications, danger zone
 ```
 
 ---
 
-### 3.3 · Árbol de Decisión Rápida
+### 3.3 · Quick Decision Tree
 
-Ante cualquier feature nueva:
+For any new feature:
 
 ```
-¿Es una acción sobre una entidad existente?
+Is it an action on an existing entity?
 │
-├── SÍ → ¿Existe página single de esa entidad?
-│         ├── SÍ → ¿Es un aspecto distinto?      → NUEVO TAB
-│         │        ¿Es una acción puntual?         → ACCIÓN EN EL TAB
-│         └── NO → ¿Tiene formulario?
-│                   ├── ≤ 3 campos                → MODAL
-│                   └── > 3 campos                → PÁGINA DEDICADA
+├── YES → Does a single page exist for that entity?
+│          ├── YES → Is it a distinct aspect?     → NEW TAB
+│          │         Is it a one-off action?       → ACTION IN THE TAB
+│          └── NO  → Does it have a form?
+│                     ├── ≤ 3 fields              → MODAL
+│                     └── > 3 fields              → DEDICATED PAGE
 │
-└── NO → ¿Es creación de entidad nueva?
-          ├── ≤ 3 campos                           → MODAL
-          └── > 3 campos                           → PÁGINA /new
+└── NO  → Is it the creation of a new entity?
+           ├── ≤ 3 fields                          → MODAL
+           └── > 3 fields                          → /new PAGE
 ```
 
 ---
 
-## FASE 4 — DISEÑO VISUAL
+## PHASE 4 — VISUAL DESIGN
 
-> **Aplica el skill `web-design-guidelines`** antes de implementar cualquier componente visual. Ese skill define el estándar de diseño del proyecto.
+> **Apply the `web-design-guidelines` skill** before implementing any visual component. That skill defines the project's design standard.
 
-Las siguientes reglas son **específicas de Ascendia** y complementan (sin reemplazar) el skill:
+The following rules are **Ascendia-specific** and complement (without replacing) the skill:
 
-### Restricciones del Proyecto
+### Project Constraints
 
-- **Obligatorio:** Usa exclusivamente los componentes del UI system del proyecto (shadcn/ui + Radix).
-- Antes de crear un componente visual, verifica si ya existe en el UI system.
-- Compón primitivos del sistema; no reinventes botones, inputs, modales, tabs.
+- **Mandatory:** Use exclusively the project's UI system components (shadcn/ui + Radix).
+- Before creating a visual component, check if it already exists in the UI system.
+- Compose system primitives; don't reinvent buttons, inputs, modals, or tabs.
 
-> **Uso de componentes** los componentes del UI system estan la carpeta @/shared/components. los componentes con base shadcn/ui + Radix se utilizan según la documentación o uso especifico, los componentes reutilizables se utilizan en coherencia con la nececidad (ejemplos: titulos o headings usa el componente `Title`, para textos se usa el componente `P`, para los iconos se utiliza `Icon` con sus variantes)
+> **Component usage:** UI system components live in `@/shared/components`. shadcn/ui + Radix components are used according to their documentation; reusable components are used coherently with the need (examples: for titles or headings use the `Title` component, for text use the `P` component, for icons use `Icon` with its variants).
 
-### Tokens del Sistema
+### System Tokens
 
-- Colores semánticos: `--primary`, `--muted`, `--destructive`, `--background`, etc.
-- Spacing basado en los tokens de Tailwind del proyecto (no valores arbitrarios).
-- Escala tipográfica definida en el proyecto — no inventes tamaños.
+- Semantic colors: `--primary`, `--muted`, `--destructive`, `--background`, etc.
+- Spacing based on the project's Tailwind tokens (no arbitrary values).
+- Typographic scale defined in the project — don't invent sizes.
 
-### Estados Obligatorios
+### Required States
 
-Todos los elementos interactivos deben implementar: `default` · `hover` · `focus` · `disabled` · `loading`.
+All interactive elements must implement: `default` · `hover` · `focus` · `disabled` · `loading`.
 
-### Responsividad
+### Responsiveness
 
-- Todo componente debe funcionar en mobile, tablet y desktop.
-- Los modales en mobile ocupan pantalla completa (bottom sheet o full modal).
-- Las tabs en mobile colapsan a selector/dropdown si no caben.
+- Every component must work on mobile, tablet, and desktop.
+- Modals on mobile occupy the full screen (bottom sheet or full modal).
+- Tabs on mobile collapse to a selector/dropdown if they don't fit.
 
-### Empty y Error States
+### Empty and Error States
 
-- Empty states: ilustración/icono + copy accionable (nunca dejar en blanco).
-- Error states: causa clara + acción concreta para resolver.
-- Loading states: skeletons sobre spinners cuando sea posible.
-
----
-
-## FASE 5 — PROCESO DE IMPLEMENTACIÓN
-
-### Orden de Trabajo
-
-1. Completar Fase 0 (leer plan, código existente y skills relevantes).
-2. Completar Fase 1 (análisis escrito antes de escribir código).
-3. Decidir el patrón de UI correcto (Fase 3) y documentarlo.
-4. Implementar tipos/interfaces primero si aplica.
-5. Implementar lógica (hooks, server actions, helpers).
-6. Implementar UI sobre la lógica ya lista.
-7. Verificar integración con el sistema de rutas y el sidebar contextual.
-
-### Checklist Antes de Entregar
-
-- [ ] Se leyó el plan de desarrollo y el estado actual de implementaciones.
-- [ ] Se identificaron y aplicaron los skills relevantes (`brainstorming`, `vercel-react-best-practices`, `web-design-guidelines`).
-- [ ] Se eligió el patrón de UI correcto con justificación explícita.
-- [ ] Se usaron los componentes del UI system — ningún elemento visual se reinventó.
-- [ ] Las acciones de una misma entidad están agrupadas coherentemente.
-- [ ] Todos los estados visuales están implementados (`default`, `hover`, `focus`, `disabled`, `loading`).
-- [ ] Los tipos son correctos y completos (sin `any`).
-- [ ] El sistema de rutas se usa correctamente con `RouteParams`.
-- [ ] No hay imports no usados, `console.log` ni código comentado.
-- [ ] El aislamiento multi-tenant está aplicado en todas las queries (`organizationId`).
+- Empty states: illustration/icon + actionable copy (never leave blank).
+- Error states: clear cause + concrete action to resolve it.
+- Loading states: skeletons over spinners whenever possible.
 
 ---
 
-# PARTE 5 · COMPORTAMIENTO Y COMUNICACIÓN
+## PHASE 5 — IMPLEMENTATION PROCESS
 
-## Lo que SIEMPRE haces
+### Order of Work
 
-- Reportas qué encontraste en el plan de desarrollo antes de actuar.
-- Declaras explícitamente qué patrón de UI elegiste y por qué.
-- Explicas brevemente tu decisión de arquitectura si no es obvia.
-- Preguntas UNA sola cosa concreta si algo es ambiguo — antes de proceder.
-- Indicas qué archivos creaste/modificaste al final con una lista clara.
+1. Complete Phase 0 (read plan, existing code, and relevant skills).
+2. Complete Phase 1 (written analysis before writing code).
+3. Decide the correct UI pattern (Phase 3) and document it.
+4. Implement types/interfaces first if applicable.
+5. Implement logic (hooks, server actions, helpers).
+6. Implement UI on top of the ready logic.
+7. Verify integration with the route system and the contextual sidebar.
 
-## Lo que NUNCA haces
+### Delivery Checklist
 
-- Asumir la estructura del proyecto sin leerla primero.
-- Crear componentes visuales sin usar el UI system del proyecto.
-- Saltarte la Fase 0 porque "parece sencillo".
-- Construir rutas como string literals.
-- Mezclar acciones de distintas entidades sin agrupación coherente.
-- Poner formularios complejos en modales o formularios simples en páginas dedicadas.
-- Dispersar features de una entidad en distintos lugares de la UI.
-- Entregar código con `any`, imports muertos o `console.log`.
-- Ignorar los skills disponibles antes de implementar.
+- [ ] The development plan and current state of implementations were read.
+- [ ] Relevant skills were identified and applied (`brainstorming`, `vercel-react-best-practices`, `web-design-guidelines`).
+- [ ] The correct UI pattern was chosen with explicit justification.
+- [ ] UI system components were used — no visual element was reinvented.
+- [ ] Actions belonging to the same entity are grouped coherently.
+- [ ] All visual states are implemented (`default`, `hover`, `focus`, `disabled`, `loading`).
+- [ ] Types are correct and complete (no `any`).
+- [ ] The route system is used correctly with `RouteParams`.
+- [ ] No unused imports, `console.log`, or commented-out code.
+- [ ] Multi-tenant isolation is applied in all queries (`organizationId`).
 
 ---
 
-## UX Writing — Tono del Producto
+# PART 5 · BEHAVIOR AND COMMUNICATION
 
-**Objetivo:** Hablar como un coach humano — empático, directo y con curiosidad genuina.
+## What you ALWAYS do
 
-| ✅  | Cercano pero profesional    |
-| --- | --------------------------- |
-| ✅  | Acompañante, no autoritario |
-| ✅  | Reflexivo pero ligero       |
-| ✅  | Positivo sin exagerar       |
+- Report what you found in the development plan before acting.
+- Explicitly state which UI pattern you chose and why.
+- Briefly explain your architecture decision if it is not obvious.
+- Ask ONE single concrete question if something is ambiguous — before proceeding.
+- List which files you created/modified at the end with a clear list.
+
+## What you NEVER do
+
+- Assume the project structure without reading it first.
+- Create visual components without using the project's UI system.
+- Skip Phase 0 because it "seems simple."
+- Build routes as string literals.
+- Mix actions from different entities without coherent grouping.
+- Put complex forms in modals or simple forms in dedicated pages.
+- Scatter features of one entity across different places in the UI.
+- Deliver code with `any`, dead imports, or `console.log`.
+- Ignore available skills before implementing.
+
+---
+
+## UX Writing — Product Tone
+
+**Goal:** Speak like a human coach — empathetic, direct, and with genuine curiosity.
+
+| ✅  | Warm but professional           |
+| --- | ------------------------------- |
+| ✅  | Accompanying, not authoritative |
+| ✅  | Reflective but light            |
+| ✅  | Positive without overdoing it   |
 
 ```typescript
-// ✅ CORRECTO
+// ✅ CORRECT
 const messages = {
-  decisionSaved: '¡Decisión registrada! Veremos su impacto al finalizar la ronda.',
-  roundComplete: 'Ronda completada. Veamos cómo les fue como equipo...',
-  lowResources: 'Los recursos están bajando rápidamente. Es momento de colaborar 🤝',
-  aiSuggestion: 'He notado un patrón interesante. ¿Quieres que te lo muestre?',
+  decisionSaved: "Decision recorded! We'll see its impact at the end of the round.",
+  roundComplete: "Round complete. Let's see how you did as a team...",
+  lowResources:  "Resources are dropping fast. Time to collaborate 🤝",
+  aiSuggestion:  "I've noticed an interesting pattern. Want me to show you?",
 }
 
-// ❌ INCORRECTO
+// ❌ INCORRECT
 const messages = {
   decisionSaved: 'Decision registered successfully in database.',
   roundComplete: 'Round status updated to completed.',
-  lowResources: 'Resource threshold warning triggered.',
-  aiSuggestion: 'Pattern detected. Click here for analysis.',
+  lowResources:  'Resource threshold warning triggered.',
+  aiSuggestion:  'Pattern detected. Click here for analysis.',
 }
 ```
+
+---
+
+# TODOS
+
+## Task Tracking Structure
+
+```
+Name:         task name (file name)
+Description:  concise description of the task to perform
+MVP Phase:    phase number from the implementation plan
+Dependencies: tasks or modules that must be ready first
+```
+
+## MVP Implementation Plan
+
+### PHASE 1 · Simulation Engine Foundations
+- [ ] Prisma schema for simulations
+- [ ] Unified Simulation Engine (SimulationEngine)
+- [ ] Basic StateManager
+- [ ] Base tRPC routers
+
+### PHASE 2 · Scenario System
+- [ ] ScenarioFactory with templates
+- [ ] Supply Chain scenario implemented
+- [ ] EventGenerator with dynamic crises
+- [ ] ScoringCalculator for competencies
+
+### PHASE 3 · Round and Decision System
+- [ ] RoundManager with evolutionary phases
+- [ ] TimerManager with notifications
+- [ ] Decision system with validation
+- [ ] Decision persistence
+
+### PHASE 4 · Modes (MVP Core)
+- [ ] AI Virtual Team with NPCs
+- [ ] IndividualEvaluationSystem
+- [ ] IndividualDebriefSystem
+- [ ] Complete individual flow
+
+### PHASE 5 · Real-time and Events
+- [ ] Advanced EventGenerator with complex triggers
+- [ ] WebSocket system (Socket.IO per session)
+- [ ] Real-time event impact in UI
+- [ ] Real-time notifications
+- [ ] Redis caching and optimization
+
+### PHASE 6 · Management Dashboard
+- [ ] Workspace view for simulations
+- [ ] Real-time session monitor
+- [ ] Flow control (pause / resume)
+
+### PHASE 7 · Internationalization and Polish
+- [ ] i18n for all modules (ES / EN)
+- [ ] Performance optimization
+- [ ] Complete testing
+- [ ] Basic reports and export
+- [ ] Final documentation

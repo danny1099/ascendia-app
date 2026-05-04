@@ -59,7 +59,7 @@ export const Modal = ({ children, title, description, trigger, open, onOpenChang
           <DrawerTitle>{title || ""}</DrawerTitle>
           {description && <DrawerDescription>{description}</DrawerDescription>}
           </DrawerHeader>
-        <div className="h-fit py-2 px-4">{children}</div>
+        <div className="h-fit py-2 px-4 overflow-y-auto">{children}</div>
       </DrawerContent>
     </Drawer>
   );

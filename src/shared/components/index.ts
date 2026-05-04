@@ -46,4 +46,6 @@ export * from "./text";
 export * from "./theme-toggle";
 export * from "./title";
 export * from "./toaster";
+export * from "./toggle-group";
+export * from "./toggle";
 export * from "./tooltip";

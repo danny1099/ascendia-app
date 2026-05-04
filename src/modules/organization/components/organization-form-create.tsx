@@ -1,9 +1,7 @@
 "use client";
-import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { I18nMessage, useTranslations } from "next-intl";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { getPrivateRoute } from "@/routes/utils";
 import { useModal, useToast } from "@/shared/hooks";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/shared/components/form";
 import { Button, Cancel, IconPicker, Input } from "@/shared/components";
@@ -11,7 +9,6 @@ import { organizationSchema, type OrganizationSchema } from "@/modules/organizat
 import { trpc, useUtils } from "@/trpc/client";
 
 export const OrganizationFormCreate = () => {
-  const router = useRouter();
   const toast = useToast();
   const t = useTranslations("organization");
   const { closeModal } = useModal();
@@ -43,10 +40,6 @@ export const OrganizationFormCreate = () => {
     /* close the modal and show a success message */
     closeModal();
     toast({ message: message as I18nMessage, type: "success" });
-
-    /* redirect to the private route of new organization */
-    const redirectTo = getPrivateRoute("organizations", { organization: data?.slug as string });
-    router.push(redirectTo, { scroll: false });
   };
 
   return (

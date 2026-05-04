@@ -1,8 +1,9 @@
 "use client";
 import { useTranslations } from "next-intl";
+import { cn } from "@/shared/utils";
 import { Button } from "@/shared/components";
 import { useModal } from "@/shared/hooks";
-import { cn } from "@/shared/utils";
+import { UserFormCreate } from "@/modules/user/components";
 
 interface Props {
   className?: string;
@@ -19,7 +20,7 @@ export const AddMemberButton = ({ className }: Props) => {
         openModal({
           title: t("modal.title"),
           description: t("modal.subtitle"),
-          content: <div />,
+          content: <UserFormCreate />,
         });
       }}
       className={cn("text-xs", className)}

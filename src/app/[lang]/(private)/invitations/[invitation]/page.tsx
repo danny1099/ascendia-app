@@ -29,10 +29,10 @@ export default async function Invitations({ params }: InvitationsProps) {
       <main className="bg-background flex size-full flex-col items-center gap-2 px-4 py-6 md:px-24">
         <AnimatedContent className="mt-10 flex h-full w-full flex-col items-center justify-center md:w-120">
           <Avatar url={data?.inviterAvatar} size="lg" />
-          <span className="text-foreground mt-3 flex w-full flex-col items-center text-sm">
-            <p>
+          <span className="text-muted-foreground mt-3 flex w-full flex-col items-center text-sm">
+            <p className="text-muted-foreground">
               {t.rich("invite-message", {
-                mark: () => <strong className="font-medium">{data?.inviterName as string}</strong>,
+                mark: () => <strong className="text-foreground font-medium">{data?.inviterName as string}</strong>,
               })}
             </p>
             <p>

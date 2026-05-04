@@ -23,7 +23,7 @@ export const InvitationCard = () => {
       ) : (
         <div className="flex w-full flex-row items-center gap-3 py-1">
           <Box sizes="md" variant="outline">
-            <Icon name="invite" className="size-4" />
+            <Icon name="invite" className="size-4 shrink-0" />
           </Box>
           <div className="flex w-full flex-col gap-3">
             <p className="text-3xs text-muted-foreground text-pretty">
@@ -35,7 +35,7 @@ export const InvitationCard = () => {
                 role: data.role,
               })}
             </p>
-            <Button variant="tertiary" size="sm" className="text-3xs w-fit" onClick={() => onRedirect(data.id)}>
+            <Button size="sm" className="text-3xs w-fit" onClick={() => onRedirect(data.id)}>
               {t("respond")}
             </Button>
           </div>

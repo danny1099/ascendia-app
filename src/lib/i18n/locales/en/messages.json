@@ -2,9 +2,11 @@
   "validation": {
     "required": "This field is required",
     "invalid_email": "Please enter a valid email address",
-    "invalid_password": "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
+    "invalid_password": "Password must be at least 8 characters long",
     "invalid_name": "Name  must be at least 3 characters long",
-    "invalid_otp": "Please enter a valid verification code"
+    "invalid_last_name": "Last name  must be at least 3 characters long",
+    "invalid_otp": "Please enter a valid verification code",
+    "invalid_role": "Please select a valid role"
   },
   "messages": {
     "account_created": {
@@ -286,6 +288,10 @@
     "invitation_decline_error": {
       "title": "Something went wrong",
       "content": "Something went wrong while declining this invitation. Let’s try again."
+    },
+    "user_created": {
+      "title": "User created",
+      "content": "Your user has been created. Let’s keep going ✨"
     }
   }
 }

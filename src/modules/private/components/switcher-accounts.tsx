@@ -100,8 +100,7 @@ export const MenuAccountSwitcher = ({ className }: OrganizationSwitcherProps) =>
               </MenuPortal>
             </div>
           </MenuSubTrigger>
-        </MenuSub>
-        
+        </MenuSub>  
         <MenuSeparator />
         <InvitationCard />
       </MenuContent>

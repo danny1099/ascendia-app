@@ -8,17 +8,19 @@ interface AvatarProps extends React.ComponentProps<typeof AvatarPrimitive.Root> 
   url?: string;
   ring?: boolean;
   fallback?: string;
+  withDot?: boolean;
   className?: string;
 }
 
-export function BaseAvatar({ className, ring = false, size = "default", ...props }: AvatarProps) {
+export function BaseAvatar({ className, ring = false, withDot = false, size = "default", ...props }: AvatarProps) {
   return (
     <AvatarPrimitive.Root
       data-slot="avatar"
       data-size={size}
       data-ring={ring}
+      data-badge={withDot}
       className={cn(
-        "group/avatar data-[ring=true]:ring-offset-background relative flex size-8 shrink-0 overflow-hidden rounded-full select-none data-[ring=true]:ring-1 data-[ring=true]:ring-blue-600 data-[ring=true]:ring-offset-2 data-[size=default]:size-8 data-[size=lg]:size-12 data-[size=md]:size-10 data-[size=sm]:size-7 data-[size=xl]:size-16 data-[size=xs]:size-6",
+        "group/avatar data-[ring=true]:ring-offset-background relative flex size-8 shrink-0 overflow-hidden rounded-full select-none data-[ring=true]:ring-1 data-[ring=true]:ring-green-600 data-[ring=true]:ring-offset-2 data-[size=default]:size-8 data-[size=lg]:size-12 data-[size=md]:size-10 data-[size=sm]:size-7 data-[size=xl]:size-16 data-[size=xs]:size-6",
         className
       )}
       {...props}
@@ -54,8 +56,9 @@ export function AvatarBadge({ className, ...props }: React.ComponentProps<"span"
     <span
       data-slot="avatar-badge"
       className={cn(
-        "bg-primary text-primary-foreground ring-background absolute right-0 bottom-0 z-10 inline-flex items-center justify-center rounded-full ring-2 select-none",
-        "group-data-[size=sm]/avatar:size-2 group-data-[size=sm]/avatar:[&>svg]:hidden",
+        "bg-primary text-primary-foreground ring-background absolute right-0 bottom-0 z-90 inline-flex items-center justify-center rounded-full ring-2 select-none",
+        "group-data-[size=xs]/avatar:size-2 group-data-[size=xs]/avatar:[&>svg]:hidden",
+        "group-data-[size=sm]/avatar:size-2.5 group-data-[size=sm]/avatar:[&>svg]:hidden",
         "group-data-[size=default]/avatar:size-2.5 group-data-[size=default]/avatar:[&>svg]:size-2",
         "group-data-[size=lg]/avatar:size-3 group-data-[size=lg]/avatar:[&>svg]:size-2",
         className
@@ -91,11 +94,12 @@ export function AvatarGroupCount({ className, ...props }: React.ComponentProps<"
   );
 }
 
-export function Avatar({ url, fallback, className, ...props }: AvatarProps) {
+export function Avatar({ url, fallback, withDot = false, className, ...props }: AvatarProps) {
   return (
     <BaseAvatar {...props}>
       <AvatarImage src={url} alt="Avatar of logged in user" />
       {fallback && <AvatarFallback>{fallback}</AvatarFallback>}
+      {withDot && <AvatarBadge className="bg-green-600 dark:bg-green-800" />}
     </BaseAvatar>
   );
 }

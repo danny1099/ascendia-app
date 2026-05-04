@@ -3,8 +3,7 @@ import { z } from "zod";
 const name = z.string().min(3, { message: "invalid_name" });
 const avatar = z.string().optional();
 const email = z.string().email({ message: "invalid_email" });
-const role = z.enum(["owner", "admin", "member"], { error: "required" });
-const organizationId = z.string().nonempty({ message: "required" });
+const role = z.string().min(1, { message: "required" });
 const password = z.string().regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, {
   message: "invalid_password",
 });
@@ -14,7 +13,6 @@ export const userSchema = z.object({
   avatar: avatar,
   email: email,
   role: role,
-  organizationId: organizationId,
   password: password,
 });
 

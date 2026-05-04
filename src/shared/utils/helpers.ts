@@ -120,8 +120,8 @@ export function defineColumns<T>(config: ColumnsConfig<T>) {
   }));
 }
 
-export const getRandomAvatar = () => {
-  const randomGender = Math.random() < 0.5 ? "male" : "female";
+export const getRandomAvatar = (genre: "male" | "female" | "random" = "random") => {
+  const randomGender = genre === "random" ? (Math.random() < 0.5 ? "male" : "female") : genre;
   const randomIndex = Math.floor(Math.random() * (30 - 1 + 1)) + 1;
 
   const urlAvatarPlaceholder = `https://d2u8k2ocievbld.cloudfront.net/memojis/${randomGender}/${randomIndex}.png`;
@@ -146,4 +146,23 @@ export const fallbackName = (text: string, separator = " ") => {
   }
 
   return names[0].charAt(0).toUpperCase();
+};
+
+export const randomPassword = (length: number = 16) => {
+  const lowercase = "abcdefghijklmnopqrstuvwxyz";
+  const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const numbers = "0123456789";
+  const symbols = "@$!%*?&";
+
+  const allCharacters = lowercase + uppercase + numbers + symbols;
+
+  const randomChar = (pool: string) => {
+    const index = crypto.getRandomValues(new Uint32Array(1))[0] % pool.length;
+    return pool[index];
+  };
+
+  const required = [randomChar(lowercase), randomChar(uppercase), randomChar(numbers), randomChar(symbols)];
+  const rest = Array.from({ length: length - required.length }, () => randomChar(allCharacters));
+
+  return [...required, ...rest].sort(() => (crypto.getRandomValues(new Uint32Array(1))[0] % 2 === 0 ? 1 : -1)).join("");
 };

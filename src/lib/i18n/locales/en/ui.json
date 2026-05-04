@@ -274,12 +274,19 @@
     "verified": "Email verified",
     "not-verified": "Email not verified",
     "form": {
-      "email": { "label": "Email", "placeholder": "What's your user email?" },
-      "name": { "label": "Name", "placeholder": "What's your user name?" },
-      "lastName": { "label": "Last name", "placeholder": "What's your user last name?" },
-      "role": { "label": "Role", "placeholder": "What's your user role?" },
+      "email": { "label": "Email", "placeholder": "What's the user email?" },
+      "name": { "label": "Name", "placeholder": "Enter the user name here" },
+      "lastName": { "label": "Last name", "placeholder": "Enter the user last name" },
+      "role": { "label": "Role", "placeholder": "Role does the user have?" },
+      "password": { "label": "Password", "placeholder": "Define a password for the user" },
+      "generate_password": "Generate",
       "submit-button": "Save User",
-      "cancel-button": "Cancel"
+      "cancel-button": "Cancel",
+      "roles": {
+        "admin": "Admin",
+        "member": "Member",
+        "owner": "Owner"
+      }
     },
     "invitation": {
       "title": "Invite user",
@@ -323,6 +330,10 @@
       "expiry": "This invitation expires in {time}",
       "no-invitations": "You don't have any invitations yet",
       "respond": "View invitation"
+    },
+    "nabvar": {
+      "logout": "Log out",
+      "profile": "Go to profile"
     }
   }
 }

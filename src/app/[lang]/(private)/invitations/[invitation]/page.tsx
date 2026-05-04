@@ -14,7 +14,7 @@ interface InvitationsProps {
 export default async function Invitations({ params }: InvitationsProps) {
   const { invitation } = await params;
   const { organization } = await isAuthenticated();
-  const { data } = await trpc.user.getInvitation({ param: invitation });
+  const { data } = await trpc.user.getInvitationById({ param: invitation });
 
   /* translations and redirect route */
   const t = await getTranslations("invitation");

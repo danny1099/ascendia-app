@@ -151,7 +151,7 @@ export const userRouter = router({
       code: 200,
     };
   }),
-  getInvitation: procedure.input(param).query<APIResult<InvitedUser>>(async ({ ctx, input }) => {
+  getInvitationById: procedure.input(param).query<APIResult<InvitedUser>>(async ({ ctx, input }) => {
     const { param: invitationId } = input;
 
     const { data, error } = await tryCatch(
@@ -199,7 +199,7 @@ export const userRouter = router({
       code: 200,
     };
   }),
-  allInvitations: procedure.query<APIResult<InvitedUser>>(async ({ ctx }) => {
+  getAllInvitations: procedure.query<APIResult<InvitedUser>>(async ({ ctx }) => {
     /* get current signed in user */
     const user = await ctx.db.user.findUnique({
       where: { id: ctx.userId as string },
@@ -217,7 +217,7 @@ export const userRouter = router({
     /* get all invitations for current signed in user */
     const { data, error } = await tryCatch(
       ctx.db.invitation.findFirst({
-        where: { email: user.email },
+        where: { email: user.email, status: "pending", AND: { expiresAt: { gt: new Date() } } },
         include: { organization: true, inviter: true },
         orderBy: { createdAt: "desc" },
       })

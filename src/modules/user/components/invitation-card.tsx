@@ -8,7 +8,7 @@ import { trpc } from "@/trpc/client";
 export const InvitationCard = () => {
   const t = useTranslations("users.invitations");
   const router = useRouter();
-  const { data } = trpc.user.allInvitations.useQuery().data ?? {};
+  const { data } = trpc.user.getAllInvitations.useQuery().data ?? {};
 
   const onRedirect = (invitation: string) => {
     const redirectTo = getPrivateRoute("invited", { invitation });

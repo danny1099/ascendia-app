@@ -204,7 +204,7 @@
     "search_box": "Type to search your organization here",
     "no_results": {
       "title": "No organizations found",
-      "subtitle": "You don't have any organizations yet. Let's create one!"
+      "subtitle": "It looks like you don't have any organizations yet. Let's create one!"
     },
     "add-button": "Add organization",
     "form": {
@@ -267,7 +267,7 @@
     "search_box": "Type to search your user here",
     "no_results": {
       "title": "No users found",
-      "subtitle": "You don't have any users yet. Let's create one!"
+      "subtitle": "It looks like you don't have any users yet. Let's create one!"
     },
     "add-button": "Add user",
     "invite-button": "Invite user",
@@ -334,6 +334,56 @@
     "nabvar": {
       "logout": "Log out",
       "profile": "Go to profile"
+    }
+  },
+  "workspaces": {
+    "title": "Workspaces",
+    "description": "Lead with vision. in these spaces you can grow and lead with purpose.",
+    "search_box": "Type something to search in your workspaces...",
+    "no_results": {
+      "title": "No workspaces found",
+      "subtitle": "It looks like you don't have any workspaces yet. Let's create one!"
+    },
+    "add-button": "Add Workspace",
+    "modal": {
+      "title": "Your Workspace",
+      "subtitle": "Manage your spaces, define simulations, and keep every decision moving forward.",
+      "delete": {
+        "title": "Wait a moment",
+        "subtitle": "Are you sure you want to delete this workspace?",
+        "description": "This action cannot be undone.",
+        "cancel-button": "No, I changed my mind",
+        "confirm-button": "Yes, I'm sure"
+      }
+    },
+    "types": {
+      "business": { "label": "Business", "placeholder": "Lead with others, grow together." },
+      "individual": { "label": "Personal", "placeholder": "Prepare your own leadership journey." },
+      "assessment": { "label": "Assessment", "placeholder": "Plan and lead with purpose. Choose the best elements." }
+    },
+    "form": {
+      "name": { "label": "Name", "placeholder": "Name the space where your group thrives" },
+      "description": { "label": "Description", "placeholder": "Add a short description for this workspace" },
+      "workspace-type": "What kind of workspace are you creating?",
+      "submit-button": "Save Workspace",
+      "cancel-button": "Cancel",
+      "organization": {
+        "label": "Where do you lead from?",
+        "placeholder": "Pick the organization that owns this workspace"
+      }
+    },
+    "table": {
+      "name": "Name",
+      "type": "Type of workspace",
+      "organization": "Organization",
+      "createdAt": "Created At",
+      "actions": "Actions"
+    },
+    "options": {
+      "edit": "Edit",
+      "delete": "Delete",
+      "enter": "Launch",
+      "cancel": "Cancel"
     }
   }
 }

@@ -8,11 +8,12 @@ import { cn, baseColors, getColor, type Color } from "@/shared/utils";
 interface Props {
   value: string;
   onChange: (value: string) => void;
+  withLocalDevice?: boolean;
   className?: string;
 }
 
 /* prettier-ignore */
-export const IconPicker = ({ value, onChange, className }: Props) => {
+export const IconPicker = ({ value, onChange, withLocalDevice = true, className }: Props) => {
   const [selected, setSelected] = useState({ type: "icon", value });
   const [iconActive, colorActive] = selected.value.split(":") ?? [];
   const t = useTranslations("icons");
@@ -80,7 +81,7 @@ export const IconPicker = ({ value, onChange, className }: Props) => {
             );
           })}
         </div>
-        <ImageFromDevice format="url" onImageSelect={onImageSelect} />
+        {withLocalDevice && <ImageFromDevice format="url" onImageSelect={onImageSelect} />}
       </PopoverContent>
     </Popover>
   );

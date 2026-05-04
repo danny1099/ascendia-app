@@ -289,6 +289,26 @@
       "title": "Something went wrong",
       "content": "Something went wrong while declining this invitation. Let’s try again."
     },
+    "workspace_already_exists": {
+      "title": "Workspace already exists",
+      "content": "It looks like you already have a workspace with this name."
+    },
+    "workspace_created": {
+      "title": "Workspace created",
+      "content": "Your workspace is all set up. now let's prepare your leaders"
+    },
+    "workspace_updated": {
+      "title": "Workspace updated",
+      "content": "Your workspace has been updated. It’s looking good ✨"
+    },
+    "workspace_deleted": {
+      "title": "Workspace deleted",
+      "content": "Your workspace has been deleted. Let´s create another one 🚀"
+    },
+    "workspace_not_found": {
+      "title": "Workspace not found",
+      "content": "We couldn’t find this workspace. Looks like it doesn’t exist."
+    },
     "user_created": {
       "title": "User created",
       "content": "Your user has been created. Let’s keep going ✨"

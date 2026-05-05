@@ -34,7 +34,7 @@ export function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
   return (
     <tr
       data-slot="table-row"
-      className={cn("data-[state=selected]:bg-accent border-muted border-b transition-colors", className)}
+      className={cn("data-[state=selected]:bg-accent border-border/40 border-b transition-colors", className)}
       {...props}
     />
   );

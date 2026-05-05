@@ -6,23 +6,25 @@ import { capitalize, cn } from "@/shared/utils";
 import { useTableSelection } from "@/shared/hooks";
 import { AnimatedContent, SearchBox, EmptyData, Badge, Checkbox } from "@/shared/components";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/shared/components/table";
-import { columnsNames } from "@/modules/scenario/helpers";
+import { columnsNames } from "@/modules/simulation/helpers";
 import { trpc } from "@/trpc/client";
 
 /* prettier-ignore */
-export const ScenarioList = () => {
+export const SimulationList = ({ workspace}: { workspace: string}) => {
   const [search, setSearch] = useState("");
   const setDebouncedSearch = useDebounceCallback(setSearch, 300);
-  const t = useTranslations("scenarios");
+  const t = useTranslations("simulations");
 
-  const [scenarios] = trpc.scenario.getAll.useSuspenseQuery();
-  const allScenarios = scenarios.data || [];
-  const filteredScenarios = allScenarios.filter((scenario) =>
-    scenario.name.toLowerCase().includes(search.toLowerCase())
+  const [simulations] = trpc.simulation.getAll.useSuspenseQuery({
+    param: workspace,
+  });
+  const allSimulations = simulations.data || [];
+  const filteredSimulations = allSimulations.filter((simulation) =>
+    simulation.name.toLowerCase().includes(search.toLowerCase())
   );
 
   /* handle table selection functions for table */
-  const { isAllSelected, isSelected, toggleAll, toggleRow } = useTableSelection(filteredScenarios);
+  const { isAllSelected, isSelected, toggleAll, toggleRow } = useTableSelection(filteredSimulations);
 
   return (
     <article className="flex size-full flex-col">
@@ -31,7 +33,7 @@ export const ScenarioList = () => {
       </div>
       <AnimatedContent className="bg-background mt-5 flex size-full flex-col py-4">
         <section className="flex size-full flex-col">
-          {filteredScenarios.length === 0 ? (
+          {filteredSimulations.length === 0 ? (
             <EmptyData title={t("no_results.title")} subtitle={t("no_results.subtitle")} />
           ) : (
             <Table>
@@ -50,13 +52,13 @@ export const ScenarioList = () => {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {filteredScenarios.map((scenario) => {
+                {filteredSimulations.map((sim) => {
                   return (
-                    <TableRow key={scenario.id} data-state={isSelected(scenario.id) && "selected"} className="group hover:text-tertiary hover:bg-accent/80">
+                    <TableRow key={sim.id} data-state={isSelected(sim.id) && "selected"} className="group hover:text-tertiary hover:bg-accent/80">
                       <TableCell>
                         <Checkbox
-                          checked={isSelected(scenario.id)}
-                          onCheckedChange={(checked) => toggleRow(scenario.id, checked === true)}
+                          checked={isSelected(sim.id)}
+                          onCheckedChange={(checked) => toggleRow(sim.id, checked === true)}
                         />
                       </TableCell>
                       {columnsNames.map(({ column, format, style }) => {
@@ -65,17 +67,14 @@ export const ScenarioList = () => {
                             {column === "name" && (
                               <div className="flex flex-col items-start truncate">
                                 <span className="flex flex-row items-center">
-                                  <p className="text-2xs font-medium">{scenario.name}</p>
+                                  <p className="text-2xs font-medium">{sim.name}</p>
                                   <Badge variant="light" className="text-3xs ml-5">
-                                    {capitalize(scenario.difficulty)}
+                                    {capitalize(sim.mode)}
                                   </Badge>
-                                </span>
-                                <span className="text-muted-foreground text-3xs mt-1 line-clamp-2 w-full text-wrap">
-                                  {scenario.description}
                                 </span>
                               </div>
                             )}
-                            {column !== "name" && format(scenario[column])}
+                            {column !== "name" && format(sim[column])}
                           </TableCell>
                         );
                       })}

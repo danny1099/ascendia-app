@@ -44,7 +44,8 @@
       "users": "Users",
       "workspaces": "Workspaces",
       "dashboard": "Dashboard",
-      "scenarios": "Scenarios"
+      "scenarios": "Scenarios",
+      "simulations": "Simulations"
     }
   },
   "marketing": {
@@ -392,7 +393,7 @@
     "search_box": "Type something to search in your scenarios...",
     "no_results": {
       "title": "No scenarios found",
-      "subtitle": "You don't have any worscenarioskspaces yet. Let's create one!"
+      "subtitle": "You don't have any scenario yet. Let's create one!"
     },
     "add-button": "Create Scenario",
     "modal": {
@@ -411,6 +412,23 @@
       "category": "Category",
       "difficulty": "Difficulty",
       "maxPlayers": "Max players",
+      "totalRounds": "Total rounds",
+      "createdAt": "Created At",
+      "actions": "Actions"
+    }
+  },
+  "simulations": {
+    "title": "Simulations",
+    "description": "Plan and lead with purpose. Choose the best elements.",
+    "search_box": "Type something to search in your simulations...",
+    "no_results": {
+      "title": "No simulations found",
+      "subtitle": "You don't have any simulations yet. Let's create one!"
+    },
+    "add-button": "Add Simulation",
+    "table": {
+      "name": "Name",
+      "status": "Status",
       "createdAt": "Created At",
       "actions": "Actions"
     }

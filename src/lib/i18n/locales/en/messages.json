@@ -332,6 +332,38 @@
     "scenario_deleted": {
       "title": "Scenario deleted",
       "content": "Your scenario has been deleted. Let´s create another one 🚀"
+    },
+    "simulation_created": {
+      "title": "Simulation created",
+      "content": "Your simulation has been created. Let’s keep going ✨"
+    },
+    "simulation_started": {
+      "title": "Simulation started",
+      "content": "Your simulation has been started. Let’s keep going ✨"
+    },
+    "simulation_paused": {
+      "title": "Simulation paused",
+      "content": "Your simulation has been paused. Let’s keep going ✨"
+    },
+    "simulation_cancelled": {
+      "title": "Simulation cancelled",
+      "content": "Your simulation has been cancelled. Let’s keep going ✨"
+    },
+    "simulation_resumed": {
+      "title": "Simulation resumed",
+      "content": "Your simulation has been resumed. Let’s keep going ✨"
+    },
+    "simulation_not_found": {
+      "title": "Simulation not found",
+      "content": "We couldn’t find this simulation. Looks like it doesn’t exist."
+    },
+    "simulation_cannot_join": {
+      "title": "Simulation cannot join",
+      "content": "This simulation is already running. Please wait for it to finish."
+    },
+    "simulation_player_joined": {
+      "title": "Simulation player joined",
+      "content": "Your player has joined the simulation. Let’s keep going ✨"
     }
   }
 }

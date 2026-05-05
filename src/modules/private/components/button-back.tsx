@@ -14,7 +14,7 @@ export const Back = ({ className }: ButtonBackProps) => {
       size="icon"
       icon="chevronLeft"
       onClick={() => router.back()}
-      className={cn("hover:text-tertiary hover:bg-accent absolute top-1 -left-8 z-10 shrink-0 items-center", className)}
+      className={cn("absolute top-1 -left-8 z-10 shrink-0 cursor-pointer items-center", className)}
     />
   );
 };

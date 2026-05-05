@@ -4,6 +4,7 @@ import { organizationRouter } from "@/modules/organization/router";
 import { scenarioRouter } from "@/modules/scenario/router";
 import { userRouter } from "@/modules/user/router";
 import { workspaceRouter } from "@/modules/workspace/router";
+import { simulationRouter } from "@/modules/simulation/router";
 
 export const appRouter = router({
   health: procedure.query(() => "The server is up and running and healthy!"),
@@ -12,6 +13,7 @@ export const appRouter = router({
   workspace: workspaceRouter,
   scenario: scenarioRouter,
   user: userRouter,
+  simulation: simulationRouter,
 });
 
 export type AppRouter = typeof appRouter;

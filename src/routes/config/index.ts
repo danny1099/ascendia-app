@@ -35,12 +35,14 @@ export const routes = {
               organizations: "/organizations",
               workspaces: "/workspaces",
               users: "/users",
+              scenarios: "/scenarios",
             },
           },
           hub: {
             prefix: "/[workspace]",
             routes: {
               dashboard: "/dashboard",
+              simulations: "/simulations",
             },
           },
         },

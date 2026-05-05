@@ -2,11 +2,11 @@ import { ScenarioType, ScenarioDifficulty, Status } from "@prisma/client";
 import { ScenarioMock } from "@/modules/scenario/types";
 
 export const supplyChainScenario: ScenarioMock = {
-  id: "cuid_scenario_supply_chain_001",
+  id: "cmot6h3c700008uy0zhom24uf",
   name: "Supply Chain Masters",
   slug: "supply-chain-masters",
   description:
-    "Red de suministro global compartida. Gestiona semiconductores, logística y talento bajo crisis geopolíticas, pandémicas y regulatorias. Cada decisión individual afecta el ecosistema completo.",
+    "Recursos escasos, cadenas interdependientes y crisis que no avisan. ¿Optimizas para ti o sostienes el sistema?",
   category: ScenarioType.SUPPLY_CHAIN,
   difficulty: ScenarioDifficulty.ADVANCED,
   maxPlayers: 4,
@@ -318,11 +318,11 @@ export const supplyChainScenario: ScenarioMock = {
 };
 
 export const retailMarketingScenario: ScenarioMock = {
-  id: "cuid_scenario_retail_marketing_001",
+  id: "cmot6ivok00018uy0r8o4641m",
   name: "Retail Wars",
   slug: "retail-wars",
   description:
-    "Eres Director de Marketing de una cadena retail compitiendo por la atención de un consumidor saturado. Gestiona campañas, influencers y espacios publicitarios premium a través de 4 temporadas con crisis virales, cambios de algoritmo y disrupciones regulatorias.",
+    "Atención limitada, ruido constante y una categoría que todos quieren liderar. ¿Construyes marca o compites por el último clic?",
   category: ScenarioType.MARKETING,
   difficulty: ScenarioDifficulty.INTERMEDIATE,
   maxPlayers: 4,
@@ -662,11 +662,11 @@ export const retailMarketingScenario: ScenarioMock = {
 };
 
 export const outsourcingScenario: ScenarioMock = {
-  id: "cuid_scenario_outsourcing_001",
+  id: "cmot6jz4l00028uy0jd7r52q5",
   name: "Outsourcing Alliance",
   slug: "outsourcing-alliance",
   description:
-    "Eres Managing Director de una firma de outsourcing especializada (IT, BPO, KPO) compitiendo y colaborando simultáneamente en un ecosistema global de servicios. Gestiona talento, contratos enterprise y reputación sectorial a lo largo de 4 trimestres con crisis de datos, guerras de talento y disrupciones de IA.",
+    "Talento escaso, clientes exigentes y competidores que también son tus aliados. ¿Hasta dónde llegas solo antes de necesitar al ecosistema?",
   category: ScenarioType.OUTSOURCING,
   difficulty: ScenarioDifficulty.EXPERT,
   maxPlayers: 4,

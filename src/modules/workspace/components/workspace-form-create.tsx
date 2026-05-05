@@ -25,7 +25,7 @@ export const WorkspaceFormCreate = () => {
     defaultValues: {
       name: "",
       type: "BUSINESS",
-      logo: "collection:gray",
+      logo: "collection:black",
     },
   });
 

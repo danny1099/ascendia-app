@@ -9,9 +9,7 @@ export const workspaceRouter = router({
     const { name, type, logo } = input;
 
     const slug = toSlug(name);
-    const workspaceExisting = await ctx.db.workspace.findFirst({
-      where: { slug, organizationId: ctx.organizationId! },
-    });
+    const workspaceExisting = await ctx.db.workspace.findFirst({ where: { slug, organizationId: ctx.organizationId } });
     if (workspaceExisting) {
       return {
         data: null,

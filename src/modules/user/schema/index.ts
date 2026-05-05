@@ -16,6 +16,10 @@ export const userSchema = z.object({
   password: password,
 });
 
+export const userSchemaWithId = userSchema.extend({
+  id: z.string().nonempty({ message: "required" }),
+});
+
 export const userInvitationSchema = z.object({
   email: email,
   role: role,
@@ -28,5 +32,6 @@ export const userSetPasswordSchema = z.object({
 });
 
 export type UserSchema = z.infer<typeof userSchema>;
+export type UserSchemaWithId = z.infer<typeof userSchemaWithId>;
 export type UserInvitationSchema = z.infer<typeof userInvitationSchema>;
 export type UserSetPasswordSchema = z.infer<typeof userSetPasswordSchema>;

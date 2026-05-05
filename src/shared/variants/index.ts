@@ -174,6 +174,7 @@ export const boxVariants = cva("relative shrink-0 flex items-center justify-cent
         "bg-fuchsia-500 text-fuchsia-100 ring-fuchsia-500 dark:text-fuchsia-200 dark:bg-fuchsia-900 dark:ring-fuchsia-900",
       yellow:
         "bg-yellow-400 text-yellow-800 ring-yellow-400 dark:text-yellow-200 dark:bg-yellow-700 dark:ring-yellow-700",
+      outline: "border-border text-foreground bg-background",
     },
     type: {
       rounded: "rounded-full",

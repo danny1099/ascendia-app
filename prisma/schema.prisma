@@ -36,6 +36,9 @@ model User {
   members     Member[]
   invitations Invitation[]
   workspaces  Workspace[]
+  simulations Simulation[]
+  players     Player[]
+  benchmarks  Benchmark[]
 
   @@unique([email])
   @@map("user")
@@ -115,6 +118,7 @@ model Organization {
   invitations Invitation[]
   sessions    Session[]
   workspaces  Workspace[]
+  benchmarks  Benchmark[]
 
   @@index([slug])
   @@map("organization")
@@ -175,7 +179,378 @@ model Workspace {
 
   organization Organization @relation(fields: [organizationId], references: [id])
   user         User         @relation(fields: [userId], references: [id])
+  simulations  Simulation[]
 
   @@index([organizationId])
   @@map("workspace")
+}
+
+enum ScenarioType {
+  SUPPLY_CHAIN
+  MARKETING
+  OUTSOURCING
+  CUSTOM
+}
+
+enum ScenarioDifficulty {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+  EXPERT
+}
+
+model Scenario {
+  id          String             @id @default(cuid())
+  name        String
+  slug        String             @unique
+  description String             @db.Text
+  category    ScenarioType
+  difficulty  ScenarioDifficulty
+  maxPlayers  Int                @default(4)
+  totalRounds Int                @default(15)
+  isTemplate  Boolean            @default(false)
+  status      Status             @default(ACTIVE)
+  config      Json?
+  createdById String?
+  createdAt   DateTime           @default(now())
+  updatedAt   DateTime           @updatedAt
+
+  simulation Simulation[]
+
+  @@index([category])
+  @@index([slug])
+  @@map("scenario")
+}
+
+enum SimulationMode {
+  INDIVIDUAL
+  GRUPAL
+}
+
+enum SessionStatus {
+  WAITING
+  SCHEDULED
+  IN_PROGRESS
+  PAUSED
+  COMPLETED
+  CANCELLED
+}
+
+model Simulation {
+  id              String         @id @default(cuid())
+  code            String         @unique
+  name            String
+  description     String?
+  scenarioId      String
+  mode            SimulationMode
+  status          SessionStatus  @default(SCHEDULED)
+  scheduledFor    DateTime
+  maxParticipants Int            @default(16)
+  roundDuration   Int            @default(10) // minutos
+  timeSession     Int            @default(180) // 3 horas
+  currentRound    Int            @default(0)
+  globalResources Json
+  startedAt       DateTime?
+  completedAt     DateTime?
+  workspaceId     String
+  organizationId  String
+  createdBy       String
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  scenario  Scenario  @relation(fields: [scenarioId], references: [id], onDelete: Cascade)
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  user      User      @relation(fields: [createdBy], references: [id])
+
+  rounds       Round[]
+  insights     Insight[]
+  player       Player[]
+  resources    Resource[]
+  chatMessages ChatMessage[]
+
+  @@index([workspaceId, status])
+  @@index([code])
+  @@map("simulation")
+}
+
+enum PlayerRole {
+  LEADER
+  COORDINATOR
+  SPECIALIST
+  OBSERVER
+  ANALYST
+  AI_TEAMMATE
+}
+
+model Player {
+  id           String     @id @default(cuid())
+  userId       String
+  displayName  String
+  color        String
+  simulationId String
+  role         PlayerRole
+  roleConfig   Json?
+  isNPC        Boolean    @default(false)
+  npcProfile   Json?
+  joinedAt     DateTime   @default(now())
+  leftAt       DateTime?
+  finalScore   Float?
+  competencies Json?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  user       User       @relation(fields: [userId], references: [id])
+  simulation Simulation @relation(fields: [simulationId], references: [id], onDelete: Cascade)
+
+  decisions    Decision[]
+  insights     Insight[]
+  evaluations  Evaluation[]
+  chatMessages ChatMessage[]
+
+  @@unique([simulationId, userId])
+  @@index([userId])
+  @@map("participant")
+}
+
+enum RoundPhase {
+  INDIVIDUAL_DECISIONS
+  LIMITED_COMMUNICATION
+  OPEN_NEGOTIATION
+  SYSTEMIC_CRISIS
+  COLLABORATIVE_RECOVERY
+}
+
+enum RoundStatus {
+  PENDING
+  ACTIVE
+  PROCESSING
+  COMPLETED
+}
+
+model Round {
+  id             String      @id @default(cuid())
+  roundNumber    Int
+  phase          RoundPhase
+  status         RoundStatus @default(PENDING)
+  simulationId   String
+  timeLimit      Int?
+  startedAt      DateTime
+  endedAt        DateTime?
+  resourcesStart Json
+  resourcesEnd   Json
+  createdAt      DateTime    @default(now())
+
+  simulation Simulation @relation(fields: [simulationId], references: [id], onDelete: Cascade)
+
+  events    Events[]
+  decisions Decision[]
+
+  @@unique([simulationId, roundNumber])
+  @@index([simulationId])
+  @@map("round")
+}
+
+enum EventType {
+  RESOURCE_CRISIS
+  INTERPERSONAL
+  EXTERNAL
+  OPERATIONAL
+  REGULATORY
+  MARKET_SHIFT
+  TECHNOLOGY
+}
+
+enum EventSeverity {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+model Events {
+  id          String        @id @default(cuid())
+  roundId     String
+  type        EventType
+  severity    EventSeverity
+  title       String
+  description String        @db.Text
+  impact      Json
+  triggeredAt DateTime      @default(now())
+
+  round Round @relation(fields: [roundId], references: [id], onDelete: Cascade)
+
+  @@index([roundId])
+  @@map("events")
+}
+
+enum DecisionCategory {
+  RESOURCE_ALLOCATION
+  STRATEGIC_POSITIONING
+  PARTNERSHIP
+  OPERATIONAL
+  FINANCIAL
+  INNOVATION
+  COMMUNICATION
+}
+
+model Decision {
+  id           String           @id @default(cuid())
+  roundId      String
+  playerId     String
+  category     DecisionCategory
+  action       Json
+  intention    String?
+  resourceCost Json
+  submittedAt  DateTime         @default(now())
+
+  round       Round  @relation(fields: [roundId], references: [id], onDelete: Cascade)
+  participant Player @relation(fields: [playerId], references: [id], onDelete: Cascade)
+
+  impacts DecisionImpact[]
+
+  @@index([roundId])
+  @@index([playerId])
+  @@map("decision")
+}
+
+model DecisionImpact {
+  id              String   @id @default(cuid())
+  decisionId      String
+  shortTermImpact Json
+  longTermImpact  Json
+  systemicImpact  Json
+  competencies    Json
+  createdAt       DateTime @default(now())
+
+  decision Decision @relation(fields: [decisionId], references: [id], onDelete: Cascade)
+
+  @@map("decision_impact")
+}
+
+model Resource {
+  id               String   @id @default(cuid())
+  roundNumber      Int
+  resourceType     String
+  currentLevel     Float
+  maxCapacity      Float
+  regenerationRate Float
+  simulationId     String
+  utilization      Float
+  depletion        Float
+  recordedAt       DateTime @default(now())
+
+  simulation Simulation @relation(fields: [simulationId], references: [id], onDelete: Cascade)
+
+  @@index([simulationId, roundNumber])
+  @@map("resource")
+}
+
+enum InsightType {
+  REAL_TIME
+  POST_ROUND
+  POST_SESSION
+  PROACTIVE
+}
+
+enum InsightCategory {
+  SYSTEMIC_THINKING
+  ADAPTIVE_LEADERSHIP
+  COMMUNICATION
+  LONG_TERM_VISION
+  EMOTIONAL_INTELLIGENCE
+  RISK_MANAGEMENT
+  COLLABORATION
+  DECISION_QUALITY
+}
+
+model Insight {
+  id              String          @id @default(cuid())
+  simulationId    String
+  participantId   String
+  type            InsightType
+  category        InsightCategory
+  title           String
+  message         String          @db.Text
+  recommendations Json? // Recomendaciones específicas
+  roundNumber     Int?
+  triggeredBy     String?
+  isRead          Boolean         @default(false)
+  isDismissed     Boolean         @default(false)
+  createdAt       DateTime        @default(now())
+
+  simulation  Simulation @relation(fields: [simulationId], references: [id], onDelete: Cascade)
+  participant Player     @relation(fields: [participantId], references: [id])
+
+  @@index([simulationId, participantId])
+  @@index([type, category])
+  @@map("insight")
+}
+
+enum EvaluationType {
+  SYSTEMIC_THINKING
+  ADAPTIVE_LEADERSHIP
+  EFFECTIVE_COMMUNICATION
+  LONG_TERM_VISION
+  EMOTIONAL_INTELLIGENCE
+  STRATEGIC_PARTNERSHIP
+  RISK_MANAGEMENT
+  INNOVATION_ADOPTION
+  OPERATIONAL_EXCELLENCE
+  ECOSYSTEM_LEADERSHIP
+}
+
+model Evaluation {
+  id           String         @id @default(cuid())
+  playerId     String
+  competency   EvaluationType
+  initialScore Float?
+  currentScore Float
+  targetScore  Float?
+  evidence     Json
+  roundNumber  Int
+  calculatedAt DateTime       @default(now())
+
+  participant Player @relation(fields: [playerId], references: [id], onDelete: Cascade)
+
+  @@index([playerId, competency])
+  @@map("evaluation")
+}
+
+model Benchmark {
+  id             String   @id @default(cuid())
+  userId         String
+  organizationId String
+  totalSims      Int      @default(0)
+  avgScore       Float    @default(0)
+  bestScore      Float    @default(0)
+  percentile     Float?
+  dimensions     Json
+  updatedAt      DateTime @updatedAt
+
+  user         User         @relation(fields: [userId], references: [id])
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, organizationId])
+  @@map("benchmark")
+}
+
+enum MessageType {
+  TEXT
+  SYSTEM
+  AI_SUGGESTION
+}
+
+model ChatMessage {
+  id           String      @id @default(cuid())
+  simulationId String
+  senderId     String
+  content      String
+  type         MessageType @default(TEXT)
+  createdAt    DateTime    @default(now())
+
+  simulation Simulation @relation(fields: [simulationId], references: [id], onDelete: Cascade)
+  sender     Player     @relation(fields: [senderId], references: [id])
+
+  @@index([simulationId])
+  @@map("chat_message")
 }

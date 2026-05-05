@@ -312,6 +312,26 @@
     "user_created": {
       "title": "User created",
       "content": "Your user has been created. Let’s keep going ✨"
+    },
+    "scenario_not_found": {
+      "title": "Scenario not found",
+      "content": "We couldn’t find this scenario. Looks like it doesn’t exist."
+    },
+    "scenario_already_exists": {
+      "title": "Scenario already exists",
+      "content": "It looks like you already have a scenario with this name."
+    },
+    "scenario_created": {
+      "title": "Scenario created",
+      "content": "Your scenario is all set up. now let's prepare your leaders"
+    },
+    "scenario_updated": {
+      "title": "Scenario updated",
+      "content": "Your scenario has been updated. It’s looking good ✨"
+    },
+    "scenario_deleted": {
+      "title": "Scenario deleted",
+      "content": "Your scenario has been deleted. Let´s create another one 🚀"
     }
   }
 }

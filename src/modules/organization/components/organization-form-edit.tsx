@@ -25,7 +25,7 @@ export const OrganizationFormEdit = (organization: Organization) => {
     defaultValues: {
       id: organization.id,
       name: organization.name,
-      style: organization.logo || "corporate:black",
+      style: organization.logo || "company:black",
     },
   });
 
@@ -62,7 +62,7 @@ export const OrganizationFormEdit = (organization: Organization) => {
                       placeholder={t("form.name.placeholder")}
                       value={field.value as string}
                       variant="outline"
-                      icon="corporate"
+                      icon="company"
                       className="text-foreground w-full"
                       child={
                         <FormField

@@ -8,7 +8,7 @@ export const organizationRouter = router({
   create: procedure.input(organizationSchema).mutation<APIResult<Organization>>(async ({ ctx, input }) => {
     const { name, style } = input;
 
-    /* validate if organization slug already exists and create new one */
+    /* validate if organization slug already exists */
     const slug = toSlug(name);
     const organizationExisting = await ctx.db.organization.findFirst({ where: { slug } });
     if (organizationExisting) {
@@ -57,7 +57,7 @@ export const organizationRouter = router({
   edit: procedure.input(organizationWithIdSchema).mutation<APIResult<Organization>>(async ({ ctx, input }) => {
     const { id, name, style } = input;
 
-    /* validate if organization slug already exists and create new one */
+    /* validate if organization exists searching by id */
     const organizationExisting = await ctx.db.organization.findFirst({ where: { id } });
     if (!organizationExisting) {
       return {
@@ -82,7 +82,7 @@ export const organizationRouter = router({
       }
     }
 
-    /* create organization and add user as member */
+    /* update organization and add user as member */
     const { data, error } = await tryCatch(
       ctx.db.organization.update({
         data: {
@@ -115,7 +115,7 @@ export const organizationRouter = router({
   delete: procedure.input(param).mutation<APIResult<Organization>>(async ({ ctx, input }) => {
     const { param: id } = input;
 
-    /* validate if organization slug already exists and create new one */
+    /* validate if organization exists searching by id */
     const organizationExisting = await ctx.db.organization.findFirst({ where: { id } });
     if (!organizationExisting) {
       return {
@@ -199,7 +199,7 @@ export const organizationRouter = router({
   change: procedure.input(param).mutation<APIResult<Organization>>(async ({ ctx, input }) => {
     const { param: organizationId } = input;
 
-    /* validate if organization slug already exists and create new one */
+    /* validate if organization exists searching by id */
     const organizationExisting = await ctx.db.organization.findUnique({ where: { id: organizationId } });
     if (!organizationExisting) {
       return {
@@ -230,7 +230,7 @@ export const organizationRouter = router({
       };
     }
 
-    /* remove members, invitations and teams */
+    /* remove members, invitations for organization response */
     const { members, invitations, ...org } = data;
     const member = await ctx.db.member.findFirst({
       where: { userId: ctx.userId, AND: { organizationId } },

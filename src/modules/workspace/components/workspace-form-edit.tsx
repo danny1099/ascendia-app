@@ -27,7 +27,7 @@ export const WorkspaceFormEdit = (workspace: Workspace) => {
       id: workspace.id,
       name: workspace.name,
       type: workspace.type,
-      logo: workspace.logo || "collection:gray",
+      logo: workspace.logo || "collection:black",
     },
   });
 

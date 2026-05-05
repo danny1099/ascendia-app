@@ -9,8 +9,6 @@ import { SelectProfession } from "@/modules/onboarding/components";
 
 export const FormProfession = () => {
   const t = useTranslations("onboarding");
-
-  /* use session and use store for set email provided and navigate to next step */
   const store = useOnboardingStore((state) => state);
 
   const form = useForm<ProfessionSchema>({

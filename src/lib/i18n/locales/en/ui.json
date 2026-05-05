@@ -385,5 +385,34 @@
       "get_into": "Get into",
       "cancel": "Cancel"
     }
+  },
+  "scenarios": {
+    "title": "Scenarios",
+    "description": "Lead with strategy. in these scenarios you can learn and lead with purpose.",
+    "search_box": "Type something to search in your scenarios...",
+    "no_results": {
+      "title": "No scenarios found",
+      "subtitle": "You don't have any worscenarioskspaces yet. Let's create one!"
+    },
+    "add-button": "Create Scenario",
+    "modal": {
+      "title": "Your Scenario",
+      "subtitle": "Manage your scenarios, define rules and keep every decision moving forward.",
+      "delete": {
+        "title": "Wait a moment",
+        "subtitle": "Are you sure you want to delete this scenario?",
+        "description": "This action cannot be undone.",
+        "cancel-button": "No, I changed my mind",
+        "confirm-button": "Yes, I'm sure"
+      }
+    },
+    "table": {
+      "name": "Name",
+      "category": "Category",
+      "difficulty": "Difficulty",
+      "maxPlayers": "Max players",
+      "createdAt": "Created At",
+      "actions": "Actions"
+    }
   }
 }

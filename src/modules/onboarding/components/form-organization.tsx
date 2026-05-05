@@ -16,7 +16,6 @@ export const FormOrganization = () => {
   const router = useRouter();
   const t = useTranslations("onboarding");
 
-  /* use session and use store for set email provided and navigate to next step */
   const store = useOnboardingStore((state) => state);
 
   /* use api services to set onboarding steps */

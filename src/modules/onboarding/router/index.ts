@@ -16,7 +16,7 @@ export const onboardingRouter = router({
         code: 401,
       };
 
-    /* search if user exists with email provided */
+    /* search if user exists with current signed in user */
     const user = await ctx.db.user.findUnique({ where: { id: ctx.userId } });
     if (!user) {
       return {

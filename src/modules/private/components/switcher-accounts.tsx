@@ -49,7 +49,7 @@ export const MenuAccountSwitcher = ({ className }: OrganizationSwitcherProps) =>
     [selected?.slug, setActive, router]
   );
 
-  if (isLoading) return <SwitcherSkeleton />;
+  if (isLoading) return <SwitcherSkeleton className="mt-auto flex h-10 w-[95%] " />;
 
   return (
     <DropdownMenu>

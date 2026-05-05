@@ -1,9 +1,9 @@
 "use client";
 import type { User } from "@prisma/client";
 import { useTranslations } from "next-intl";
-import { Button, IconName, Popover, PopoverContent, PopoverTrigger } from "@/shared/components";
-import { cn } from "@/shared/utils";
+import { Button, Divider, IconName, Popover, PopoverContent, PopoverTrigger } from "@/shared/components";
 import { useModal } from "@/shared/hooks";
+import { cn } from "@/shared/utils";
 
 export function ButtonActions(user: User) {
   const t = useTranslations("users");
@@ -53,17 +53,20 @@ export function ButtonActions(user: User) {
       <PopoverContent className="flex w-44 flex-col gap-1">
         {items.map(({ name, icon, label, onClick }) => {
           return (
-            <Button
-              key={name}
-              icon={icon as IconName}
-              place="start"
-              size="sm"
-              variant={name === "delete" ? "destructive" : "item"}
-              onClick={onClick}
-              className={cn("text-2xs w-auto justify-start gap-3 font-normal [&_svg]:size-3.5")}
-            >
-              {label}
-            </Button>
+            <div className="flex flex-col">
+              {name === "delete" && <Divider type="horizontal" className="my-1.5 w-full" />}
+              <Button
+                key={name}
+                icon={icon as IconName}
+                place="start"
+                size="sm"
+                variant={name === "delete" ? "destructive" : "item"}
+                onClick={onClick}
+                className={cn("text-2xs w-auto justify-start gap-2 font-normal [&_svg]:size-3.5")}
+              >
+                {label}
+              </Button>
+            </div>
           );
         })}
       </PopoverContent>

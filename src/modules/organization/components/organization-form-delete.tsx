@@ -31,8 +31,8 @@ export const OrganizationFormDelete = (organization: Organization) => {
 
   return (
     <div className="flex h-auto w-full flex-col items-center justify-center p-2 md:w-120">
-      <div className="bg-destructive/10 flex flex-row items-center justify-center rounded-full p-5">
-        <Icon name="alert" className="text-destructive size-10" />
+      <div className="bg-destructive/10 mb-2 flex flex-row items-center justify-center rounded-full p-5">
+        <Icon name="alert" className="text-destructive size-9" />
       </div>
       <div className="flex flex-col text-center">
         <Title className="text-2xl">{t("delete.title")}</Title>
@@ -48,7 +48,7 @@ export const OrganizationFormDelete = (organization: Organization) => {
             icon="delete"
             isLoading={isPending}
             onClick={onSubmit}
-            className="w-full md:w-fit"
+            className="bg-destructive/10 w-full md:w-fit"
           >
             {t("delete.confirm-button")}
           </Button>

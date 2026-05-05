@@ -2,9 +2,9 @@
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { getPrivateRoute } from "@/routes/utils";
-import { toSlug } from "@/shared/utils";
+import { cn, toSlug } from "@/shared/utils";
 import { useModal } from "@/shared/hooks";
-import { ButtonDropdown } from "@/shared/components";
+import { Button, Divider, IconName, Popover, PopoverContent, PopoverTrigger } from "@/shared/components";
 import { WorkspaceFormEdit, WorkspaceFormDelete } from "@/modules/workspace/components";
 import type { Workspace } from "@/modules/workspace/types";
 
@@ -14,6 +14,12 @@ export function ButtonActions(workspace: Workspace) {
   const t = useTranslations("workspaces");
 
   const items = [
+    {
+      name: "manage",
+      label: t("options.get_into"),
+      icon: "collection",
+      onClick: () => getIntoWorkspace(),
+    },
     {
       name: "edit",
       label: t("options.edit"),
@@ -37,7 +43,7 @@ export function ButtonActions(workspace: Workspace) {
     },
   ];
 
-  const launchWorkspace = () => {
+  const getIntoWorkspace = () => {
     const goToWorkspace = getPrivateRoute("dashboard", {
       organization: toSlug(workspace.organization as string),
       workspace: toSlug(workspace.slug),
@@ -46,14 +52,35 @@ export function ButtonActions(workspace: Workspace) {
   };
 
   return (
-    <ButtonDropdown
-      onClick={() => launchWorkspace()}
-      variant="outline"
-      size="sm"
-      items={items}
-      className="whitespace-nowrap"
-    >
-      {t("options.enter")}
-    </ButtonDropdown>
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button
+          icon="options"
+          variant="ghost"
+          size="icon"
+          className="text-tertiary md:invisible group-hover:md:visible"
+        />
+      </PopoverTrigger>
+      <PopoverContent className="flex w-44 flex-col gap-1">
+        {items.map(({ name, icon, label, onClick }) => {
+          return (
+            <div className="flex flex-col">
+              {name === "delete" && <Divider type="horizontal" className="my-1.5 w-full" />}
+              <Button
+                key={name}
+                icon={icon as IconName}
+                place="start"
+                size="sm"
+                variant={name === "delete" ? "destructive" : "item"}
+                onClick={onClick}
+                className={cn("text-2xs w-auto justify-start gap-2 font-normal [&_svg]:size-3.5")}
+              >
+                {label}
+              </Button>
+            </div>
+          );
+        })}
+      </PopoverContent>
+    </Popover>
   );
 }

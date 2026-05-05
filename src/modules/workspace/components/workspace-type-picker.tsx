@@ -32,7 +32,7 @@ export const TypePicker = ({ value = "education", onChange }: TypePickerProps) =
       placeholder: t("business.placeholder"),
     },
     {
-      name: "assessment",
+      name: "ASSESSMENT",
       icon: "nonProfit",
       label: t("assessment.label"),
       placeholder: t("assessment.placeholder"),

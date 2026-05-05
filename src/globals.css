@@ -36,7 +36,7 @@
   --card-foreground: hsl(0, 0%, 98%);
   --popover: hsl(240, 10%, 3.9%);
   --popover-foreground: hsl(0, 0%, 98%);
-  --primary: oklch(0.28 0.09 268);
+  --primary: hsl(273.6 65.6% 32%);
   --primary-foreground: hsl(0, 0%, 98%);
   --secondary: hsl(240 7.6% 4.5%);
   --secondary-foreground: hsl(0, 0%, 98%);
@@ -46,7 +46,7 @@
   --accent-foreground: oklch(0.985 0 0);
   --tertiary: oklch(0.42 0.18 266);
   --tertiary-foreground: oklch(1 0 0);
-  --action: oklch(0.29 0.14 303);
+  --action: hsl(273.6 65.6% 32%);
   --action-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.985 0 0);

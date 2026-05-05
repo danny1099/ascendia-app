@@ -16,6 +16,7 @@ export const AddMemberButton = ({ className }: Props) => {
   return (
     <Button
       icon="add"
+      variant="flat"
       onClick={() => {
         openModal({
           title: t("modal.title"),

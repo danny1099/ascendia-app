@@ -6,7 +6,7 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-action text-action-foreground",
-        destructive: "text-destructive bg-destructive/10",
+        destructive: "bg-transparent text-destructive hover:bg-destructive/10",
         outline: "border border-border bg-background",
         secondary: "bg-secondary text-secondary-foreground",
         tertiary: "bg-tertiary text-tertiary-foreground",
@@ -14,8 +14,8 @@ export const buttonVariants = cva(
         ghost: "bg-transparent border-none text-current",
         item: "bg-transparent border-none text-foreground hover:bg-accent hover:text-accent-foreground",
         link: "text-foreground text-xs font-medium",
-        navlink:
-          "bg-transparent border-none text-foreground font-medium justify-start [&_svg]:size-4 hover:text-tertiary",
+        navlink: "border-none text-foreground justify-start [&_svg]:size-4 hover:text-tertiary",
+        flat: "bg-action text-action-foreground font-medium dark:bg-tertiary/10 dark:text-tertiary",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",

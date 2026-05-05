@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { getPrivateRoute } from "@/routes/utils";
 import { useModal, useToast } from "@/shared/hooks";
-import { Button, IconName, Popover, PopoverContent, PopoverTrigger } from "@/shared/components";
+import { Button, Divider, IconName, Popover, PopoverContent, PopoverTrigger } from "@/shared/components";
 import { OrganizationFormDelete, OrganizationFormEdit } from "@/modules/organization/components";
 import { trpc, useUtils } from "@/trpc/client";
 import { cn } from "@/shared/utils";
@@ -80,17 +80,20 @@ export function ButtonActions(organization: Organization) {
       <PopoverContent className="flex w-44 flex-col gap-1">
         {items.map(({ name, icon, label, onClick }) => {
           return (
-            <Button
-              key={name}
-              icon={icon as IconName}
-              place="start"
-              size="sm"
-              variant={name === "delete" ? "destructive" : "item"}
-              onClick={onClick}
-              className={cn("text-2xs w-auto justify-start gap-3 font-normal [&_svg]:size-3.5")}
-            >
-              {label}
-            </Button>
+            <div className="flex flex-col">
+              {name === "delete" && <Divider type="horizontal" className="my-1.5 w-full" />}
+              <Button
+                key={name}
+                icon={icon as IconName}
+                place="start"
+                size="sm"
+                variant={name === "delete" ? "destructive" : "item"}
+                onClick={onClick}
+                className={cn("text-2xs w-auto justify-start gap-2 font-normal [&_svg]:size-3.5")}
+              >
+                {label}
+              </Button>
+            </div>
           );
         })}
       </PopoverContent>

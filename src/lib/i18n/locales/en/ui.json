@@ -382,7 +382,7 @@
     "options": {
       "edit": "Edit",
       "delete": "Delete",
-      "enter": "Launch",
+      "get_into": "Get into",
       "cancel": "Cancel"
     }
   }

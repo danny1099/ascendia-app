@@ -16,6 +16,7 @@ export const AddOrganizationButton = ({ className }: Props) => {
   return (
     <Button
       icon="add"
+      variant="flat"
       onClick={() => {
         openModal({
           title: t("modal.title"),
@@ -23,7 +24,7 @@ export const AddOrganizationButton = ({ className }: Props) => {
           content: <OrganizationFormCreate />,
         });
       }}
-      className={cn("dark:bg-tertiary/20 dark:text-tertiary text-xs", className)}
+      className={cn("text-xs", className)}
     >
       {t("add-button")}
     </Button>

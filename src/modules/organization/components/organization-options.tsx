@@ -80,10 +80,9 @@ export function ButtonActions(organization: Organization) {
       <PopoverContent className="flex w-44 flex-col gap-1">
         {items.map(({ name, icon, label, onClick }) => {
           return (
-            <div className="flex flex-col">
+            <div key={name} className="flex flex-col">
               {name === "delete" && <Divider type="horizontal" className="my-1.5 w-full" />}
               <Button
-                key={name}
                 icon={icon as IconName}
                 place="start"
                 size="sm"

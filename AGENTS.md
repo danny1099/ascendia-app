@@ -83,11 +83,11 @@ Action plan       (20 min) → Real-world application
 
 ## Available Scenarios
 
-| Scenario                 | Primary Resource        | Key Crisis                          |
-| ------------------------ | ----------------------- | ----------------------------------- |
-| **Supply Chain**         | Global semiconductors   | Pandemic, geopolitical tensions     |
-| **Outsourcing Alliance** | Specialized talent      | Salary war, data breach             |
-| **Retail Marketing**     | Consumer attention      | Viral scandal, algorithm change     |
+| Scenario                 | Primary Resource      | Key Crisis                      |
+| ------------------------ | --------------------- | ------------------------------- |
+| **Supply Chain**         | Global semiconductors | Pandemic, geopolitical tensions |
+| **Outsourcing Alliance** | Specialized talent    | Salary war, data breach         |
+| **Retail Marketing**     | Consumer attention    | Viral scandal, algorithm change |
 
 ---
 
@@ -107,16 +107,16 @@ Action plan       (20 min) → Real-world application
 
 ### Evaluation Engines
 
-| Engine                | Function                                                            |
-| --------------------- | ------------------------------------------------------------------- |
-| **SimulationEngine**  | Processes decisions, applies rules, calculates impacts              |
-| **ScenarioFactory**   | Defines scenarios with reusable templates                           |
-| **EventGenerator**    | Generates dynamic crises with a trigger system                      |
-| **StateManager**      | Global state management, history, real-time synchronization         |
-| **EvaluationEngine**  | Analyzes decisions, generates competency metrics                    |
-| **ReplayEngine**      | Reconstructs decisions for active learning                          |
-| **LearningEngine**    | Generates contextual micro-learning interventions                   |
-| **CompetencyTracker** | Manages competency evolution and recovery                           |
+| Engine                | Function                                                    |
+| --------------------- | ----------------------------------------------------------- |
+| **SimulationEngine**  | Processes decisions, applies rules, calculates impacts      |
+| **ScenarioFactory**   | Defines scenarios with reusable templates                   |
+| **EventGenerator**    | Generates dynamic crises with a trigger system              |
+| **StateManager**      | Global state management, history, real-time synchronization |
+| **EvaluationEngine**  | Analyzes decisions, generates competency metrics            |
+| **ReplayEngine**      | Reconstructs decisions for active learning                  |
+| **LearningEngine**    | Generates contextual micro-learning interventions           |
+| **CompetencyTracker** | Manages competency evolution and recovery                   |
 
 ### AI Coach
 
@@ -164,7 +164,6 @@ Real-time:  Socket.IO server
 
 ```typescript
 Caching: Redis          (active sessions, real-time state)
-Storage: S3-compatible  (reports, exports)
 Queue:   Bull           (background jobs)
 ```
 
@@ -200,14 +199,14 @@ src/
 
 ## Separation of Concerns
 
-| Layer          | Role                            | Notes                            |
-| -------------- | ------------------------------- | -------------------------------- |
-| **Components** | UI and presentation only        | Prefer React Server Components   |
-| **Hooks**      | State logic and side effects    | Client-side only                 |
-| **Helpers**    | Pure functions and utilities    | No side effects                  |
-| **Routers**    | tRPC endpoints                  | Strong typing, Zod validation    |
-| **Schemas**    | Input definitions               | Always with Zod                  |
-| **Types**      | Reusable interfaces             | No `any`                         |
+| Layer          | Role                         | Notes                          |
+| -------------- | ---------------------------- | ------------------------------ |
+| **Components** | UI and presentation only     | Prefer React Server Components |
+| **Hooks**      | State logic and side effects | Client-side only               |
+| **Helpers**    | Pure functions and utilities | No side effects                |
+| **Routers**    | tRPC endpoints               | Strong typing, Zod validation  |
+| **Schemas**    | Input definitions            | Always with Zod                |
+| **Types**      | Reusable interfaces          | No `any`                       |
 
 ---
 
@@ -232,12 +231,12 @@ const sessions = await ctx.db.simulationSession.findMany({
     organizationId: ctx.session.user.organizationId, // ← CRITICAL
     workspaceId: input.workspaceId,
   },
-})
+});
 
 // ❌ INCORRECT — Query without tenant scope
 const sessions = await ctx.db.simulationSession.findMany({
   where: { workspaceId: input.workspaceId },
-})
+});
 ```
 
 ---
@@ -248,32 +247,32 @@ const sessions = await ctx.db.simulationSession.findMany({
 
 ```typescript
 // Files
-decision-form.tsx          // components  → kebab-case
-use-simulation-timer.ts    // hooks       → kebab-case with 'use' prefix
-simulation-engine.ts       // services    → kebab-case
-calculation.ts             // helpers     → kebab-case
-simulation.types.ts        // types       → kebab-case with '.types' suffix
+decision - form.tsx; // components  → kebab-case
+use - simulation - timer.ts; // hooks       → kebab-case with 'use' prefix
+simulation - engine.ts; // services    → kebab-case
+calculation.ts; // helpers     → kebab-case
+simulation.types.ts; // types       → kebab-case with '.types' suffix
 
 // Variables and functions
-const userId = '123'       // camelCase
-function calculateImpact() // camelCase
-const MAX_ROUNDS = 15      // UPPER_SNAKE_CASE for constants
+const userId = "123"; // camelCase
+function calculateImpact(); // camelCase
+const MAX_ROUNDS = 15; // UPPER_SNAKE_CASE for constants
 
 // Types, interfaces and classes
-interface User {}                         // PascalCase
-type SessionStatus = 'active' | 'paused'  // PascalCase
-enum DecisionCategory {}                  // PascalCase
-class SimulationEngine {}                 // PascalCase
+interface User {} // PascalCase
+type SessionStatus = "active" | "paused"; // PascalCase
+enum DecisionCategory {} // PascalCase
+class SimulationEngine {} // PascalCase
 ```
 
 ### Import Order
 
 ```typescript
-import { useState }     from 'react'                       // 1. External
-import { prisma }       from '@/lib/prisma'                // 2. Config/lib
-import { Button }       from '@/components'                // 3. UI Components
-import { useAuth }      from '@/modules/auth'              // 4. Modules
-import type { Session } from '@/modules/simulation/types'  // 5. Types
+import { useState } from "react"; // 1. External
+import { prisma } from "@/lib/prisma"; // 2. Config/lib
+import { Button } from "@/components"; // 3. UI Components
+import { useAuth } from "@/modules/auth"; // 4. Modules
+import type { Session } from "@/modules/simulation/types"; // 5. Types
 ```
 
 ### Component Patterns
@@ -403,11 +402,11 @@ If it **does not exist**, report it and proceed with the requested task.
 
 Before proceeding, identify and read the skills applicable to the task:
 
-| Skill | When to apply it |
-| --- | --- |
-| `brainstorming` | When the solution is not obvious or there are multiple valid approaches. Use it in Phase 1 before committing to an approach. |
-| `vercel-react-best-practices` | Before writing any React component or configuring Next.js. This skill is the source of truth for App Router patterns. |
-| `web-design-guidelines` | Before implementing any visual component. This skill defines the project's design standard. |
+| Skill                         | When to apply it                                                                                                             |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `brainstorming`               | When the solution is not obvious or there are multiple valid approaches. Use it in Phase 1 before committing to an approach. |
+| `vercel-react-best-practices` | Before writing any React component or configuring Next.js. This skill is the source of truth for App Router patterns.        |
+| `web-design-guidelines`       | Before implementing any visual component. This skill defines the project's design standard.                                  |
 
 > Skills in `/mnt/skills/` complement this document. In case of conflict, the skill takes precedence over the general rules in this file, except for Ascendia-specific conventions (multi-tenancy, route system, tRPC patterns).
 
@@ -680,17 +679,17 @@ All interactive elements must implement: `default` · `hover` · `focus` · `dis
 const messages = {
   decisionSaved: "Decision recorded! We'll see its impact at the end of the round.",
   roundComplete: "Round complete. Let's see how you did as a team...",
-  lowResources:  "Resources are dropping fast. Time to collaborate 🤝",
-  aiSuggestion:  "I've noticed an interesting pattern. Want me to show you?",
-}
+  lowResources: "Resources are dropping fast. Time to collaborate 🤝",
+  aiSuggestion: "I've noticed an interesting pattern. Want me to show you?",
+};
 
 // ❌ INCORRECT
 const messages = {
-  decisionSaved: 'Decision registered successfully in database.',
-  roundComplete: 'Round status updated to completed.',
-  lowResources:  'Resource threshold warning triggered.',
-  aiSuggestion:  'Pattern detected. Click here for analysis.',
-}
+  decisionSaved: "Decision registered successfully in database.",
+  roundComplete: "Round status updated to completed.",
+  lowResources: "Resource threshold warning triggered.",
+  aiSuggestion: "Pattern detected. Click here for analysis.",
+};
 ```
 
 ---
@@ -709,30 +708,35 @@ Dependencies: tasks or modules that must be ready first
 ## MVP Implementation Plan
 
 ### PHASE 1 · Simulation Engine Foundations
+
 - [ ] Prisma schema for simulations
 - [ ] Unified Simulation Engine (SimulationEngine)
 - [ ] Basic StateManager
 - [ ] Base tRPC routers
 
 ### PHASE 2 · Scenario System
+
 - [ ] ScenarioFactory with templates
 - [ ] Supply Chain scenario implemented
 - [ ] EventGenerator with dynamic crises
 - [ ] ScoringCalculator for competencies
 
 ### PHASE 3 · Round and Decision System
+
 - [ ] RoundManager with evolutionary phases
 - [ ] TimerManager with notifications
 - [ ] Decision system with validation
 - [ ] Decision persistence
 
 ### PHASE 4 · Modes (MVP Core)
+
 - [ ] AI Virtual Team with NPCs
 - [ ] IndividualEvaluationSystem
 - [ ] IndividualDebriefSystem
 - [ ] Complete individual flow
 
 ### PHASE 5 · Real-time and Events
+
 - [ ] Advanced EventGenerator with complex triggers
 - [ ] WebSocket system (Socket.IO per session)
 - [ ] Real-time event impact in UI
@@ -740,11 +744,13 @@ Dependencies: tasks or modules that must be ready first
 - [ ] Redis caching and optimization
 
 ### PHASE 6 · Management Dashboard
+
 - [ ] Workspace view for simulations
 - [ ] Real-time session monitor
 - [ ] Flow control (pause / resume)
 
 ### PHASE 7 · Internationalization and Polish
+
 - [ ] i18n for all modules (ES / EN)
 - [ ] Performance optimization
 - [ ] Complete testing
